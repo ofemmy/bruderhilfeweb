@@ -176,9 +176,18 @@ export default function About() {
         </div>
       </section>
       <section className="pt-64 pb-16 bg-custom-gray-light border border-red-400">
-        <div className="max-w-7xl  flex">
-          <div className="w-1/2">
-              <img src="pattern2.png" alt="" className="transform -translate-y-32 translate-x-12"/>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
+          <div className="w-1/2 relative">
+            <img
+              src="objectives.png"
+              alt=""
+              className=" relative z-20 object-cover"
+            />
+            <img
+              src="pattern2.png"
+              alt=""
+              className="absolute -top-20 -left-16"
+            />
           </div>
           <div className="w-1/2">
             <h2 className="font-extrabold text-custom-black text-5xl">
@@ -210,16 +219,15 @@ export default function About() {
               </p>
             </div>
           </div>
-          
         </div>
         <div className="mt-32">
-        <h2 className="font-bold text-custom-black text-5xl text-center">
-              Our team
-            </h2>
-          </div>
+          <h2 className="font-bold text-custom-black text-5xl text-center">
+            Our team
+          </h2>
+        </div>
       </section>
       <section className="p-32">
-
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
       </section>
     </>
   );
