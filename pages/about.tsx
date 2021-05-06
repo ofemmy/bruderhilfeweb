@@ -150,33 +150,76 @@ export default function About() {
           </h2>
           <div className="mt-12">
             <div className="grid grid-cols-3 gap-x-4 gap-y-16 ">
-                {
-                    coreValues.map(item=>(
-              <div className="h-541px w-358 overflow-hidden" key={item.title}>
-                <div className="h-[272px] relative w-358">
-                  <img
-                    src={item.coverImg}
-                    alt=""
-                    className=" absolute inset-0 h-full w-full object-cover"
-                  />
-                </div>
-                <div className="bg-primary font-light text-white ">
-                  <div className="px-6 py-8 flex flex-col  items-center overflow-hidden h-[270px]">
-                    <h3 className="font-semibold tracking-wide text-md">
-                      {item.title}
-                    </h3>
-                    <p className="mt-5 text-center text-md pb-2">
-                      {item.text}
-                    </p>
+              {coreValues.map((item) => (
+                <div className="h-541px w-358 overflow-hidden" key={item.title}>
+                  <div className="h-[272px] relative w-358">
+                    <img
+                      src={item.coverImg}
+                      alt=""
+                      className=" absolute inset-0 h-full w-full object-cover"
+                    />
+                  </div>
+                  <div className="bg-primary font-light text-white ">
+                    <div className="px-6 py-8 flex flex-col  items-center overflow-hidden h-[270px]">
+                      <h3 className="font-semibold tracking-wide text-md">
+                        {item.title}
+                      </h3>
+                      <p className="mt-5 text-center text-md pb-2">
+                        {item.text}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-
-                    ))
-                }
+              ))}
             </div>
           </div>
         </div>
+      </section>
+      <section className="pt-64 pb-16 bg-custom-gray-light border border-red-400">
+        <div className="max-w-7xl  flex">
+          <div className="w-1/2">
+              <img src="pattern2.png" alt="" className="transform -translate-y-32 translate-x-12"/>
+          </div>
+          <div className="w-1/2">
+            <h2 className="font-extrabold text-custom-black text-5xl">
+              Our Objectives
+            </h2>
+            <div className="grid grid-cols-2 gap-x-8 gap-y-12 font-light text-custom-gray mt-12 leading-loose">
+              <p>
+                To ensure an increased accessibility and provision of
+                socio-economic services for the less-privileged and the social
+                excluded members of the society.
+              </p>
+              <p>
+                To promote and advocate for the rights of children and support
+                young people in building a just,democartic and inclusive
+                society, enhancing human security and improving livelihood for
+                the poor and excluded.
+              </p>
+              <p>
+                To build the capacity and strengthen the ability of the less
+                privileged and poor people mostly in rural areas to hold
+                governments at all levels and corporate bodies accountable
+                towards enhancing their access to quality services.
+              </p>
+              <p>
+                To improve and increase the literacy level of women, boys and
+                girls in rural communities and put in place material and
+                non-material facilities that will promote their safety and
+                participation in public and private spaces.
+              </p>
+            </div>
+          </div>
+          
+        </div>
+        <div className="mt-32">
+        <h2 className="font-bold text-custom-black text-5xl text-center">
+              Our team
+            </h2>
+          </div>
+      </section>
+      <section className="p-32">
+
       </section>
     </>
   );
