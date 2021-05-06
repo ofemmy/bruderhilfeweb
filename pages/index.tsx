@@ -1,4 +1,4 @@
-import { Navbar, Hero, Card } from "../components";
+import { Navbar, Hero, Card,Footer } from "../components";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import Link from "next/link";
@@ -140,7 +140,7 @@ export default function Home(params) {
           </div>
         </div>
       </section>
-      <section className="">
+      <section className="pb-32 pt-16">
         <h2 className="font-extrabold text-custom-black text-4xl tracking-wide text-center">
           Our Thematic Areas
         </h2>

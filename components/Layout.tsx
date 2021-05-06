@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { Footer } from ".";
 export default function Layout({ children }) {
   return (
     <>
@@ -10,7 +11,7 @@ export default function Layout({ children }) {
       </Head>
       <header></header>
       {children}
-      <footer>I am the footer</footer>
+      <Footer/>
     </>
   );
 }
