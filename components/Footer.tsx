@@ -31,14 +31,14 @@ export default function Footer() {
           <div className="mt-4 font-light text-custom-gray">
             <p>Guaranty Trust Bank</p>
             <p>Acc Name: Bruderhilfe Social</p>
-            <p>Developmnet Initiative</p>
+            <p>Development Initiative</p>
             <p>
               Acc No:{" "}
               <span className="text-custom-black font-normal">0263296599</span>
             </p>
             <p className="mt-2">Keystone Bank</p>
             <p>Acc Name: Bruderhilfe Social</p>
-            <p>Developmnet Initiative</p>
+            <p>Development Initiative</p>
             <p>
               Acc No:{" "}
               <span className="text-custom-black font-normal">1006879560</span>
