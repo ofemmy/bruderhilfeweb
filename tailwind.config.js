@@ -19,6 +19,12 @@ module.exports = {
         "green-pattern": "#dbe8db",
         "custom-gray-sub": "#a3a3a3",
       },
+      height: {
+        "541px": "541px",
+      },
+      width: {
+        358: "356px",
+      },
     },
   },
   variants: {
