@@ -1,6 +1,7 @@
 import "tailwindcss/tailwind.css";
 import "styles/custom.css";
-import {Layout} from "components"
+import "swiper/swiper-bundle.css";
+import { Layout } from "components";
 function MyApp({ Component, pageProps }) {
   return (
     <Layout>

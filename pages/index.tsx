@@ -1,6 +1,51 @@
-import { Navbar, Hero } from "../components";
+import { Navbar, Hero, Card } from "../components";
+import { Swiper, SwiperSlide } from "swiper/react";
+
 import Link from "next/link";
+import { useRef } from "react";
+import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/outline";
 export default function Home(params) {
+  const swiperRef = useRef(null);
+  const thematic = [
+    {
+      title: "Education",
+      actions: [
+        "Scholarship",
+        "Renovation of schools",
+        "Provision of educationsl materials",
+      ],
+      imgSrc: "education.png",
+    },
+    {
+      title: "Health",
+      actions: [
+        "Renovation of health centers",
+        "Medical outreaches to rural areas",
+        "Training of health workers",
+      ],
+      imgSrc: "health.png",
+    },
+    {
+      title: "Socio-economic empowerment",
+      actions: [
+        "Provision of mobility carts to people living with disabilities",
+        "Provision of seed grants to women and youths",
+        "Economic empowerment and training",
+        "Acess to financial services",
+      ],
+      imgSrc: "development.png",
+    },
+    {
+      title: "Advocacy",
+      actions: [
+        "Engaging in advocacy for inclusive governance",
+        "Organising seminars and training on transparency and accountability",
+        "Local community engagement",
+        "Creating awareness through the media",
+      ],
+      imgSrc: "advocacy.jpeg",
+    },
+  ];
   return (
     <>
       <Navbar />
@@ -80,15 +125,56 @@ export default function Home(params) {
                 </span>
               </p>
               <Link href="/donate">
-              <a className="inline-flex items-center px-8 py-4 border border-transparent shadow-sm text-md leading-4 font-medium rounded-md text-white bg-white text-primary hover:bg-light-green">
-                Learn More
-              </a>
-            </Link>
+                <a className="inline-flex items-center px-8 py-4 border border-transparent shadow-sm text-md leading-4 font-medium rounded-md text-white bg-white text-primary hover:bg-light-green">
+                  Learn More
+                </a>
+              </Link>
             </div>
             <div className="bg-white rounded-t-lg overflow-hidden transform -translate-y-36">
-              <img src="helping-woman.png" alt="" className="w-full h-full rounded-sm object-cover" />
+              <img
+                src="helping-woman.png"
+                alt=""
+                className="w-full h-full rounded-sm object-cover"
+              />
             </div>
           </div>
+        </div>
+      </section>
+      <section className="">
+        <h2 className="font-extrabold text-custom-black text-4xl tracking-wide text-center">
+          Our Thematic Areas
+        </h2>
+        <div className="ml-28 pt-16">
+          <Swiper
+            slidesPerView={3.5}
+            onSlideChange={() => console.log("slide change")}
+            onSwiper={(swiper) => console.log(swiper)}
+            onInit={(swiper) => (swiperRef.current = swiper)}
+          >
+            {thematic.map((thema, idx) => (
+              <SwiperSlide key={thema.title}>
+                <Card thema={thema} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+        <div className="flex justify-end mt-4 space-x-1 px-8">
+          <button
+            onClick={() => swiperRef.current.slidePrev()}
+            className={`inline-flex items-center border border-transparent focus:outline-none ${
+              swiperRef.current?.isBeginning ? "text-gray-500" : "text-gray-800"
+            }`}
+          >
+            <ArrowLeftIcon className="h-6 w-12" />
+          </button>
+          <button
+            onClick={() => swiperRef.current.slideNext()}
+            className={`inline-flex items-center border border-transparent focus:outline-none ${
+              swiperRef.current?.isEnd ? "text-gray-500" : "text-gray-800"
+            }`}
+          >
+            <ArrowRightIcon className="h-6 w-12" />
+          </button>
         </div>
       </section>
     </>
