@@ -18,6 +18,9 @@ module.exports = {
         "light-green": "#fafffa",
         "green-pattern": "#dbe8db",
         "custom-gray-sub": "#a3a3a3",
+        pink: "#FBF0E6",
+        f0fff8: "#f0fff8",
+        "deep-purple": "#8F154B",
       },
       height: {
         "541px": "541px",

@@ -1,10 +1,9 @@
 import React from "react";
-import { Navbar } from "../components";
-import { team,coreValues } from "lib/about";
+import { BookIcon, Navbar, SocialIcon, WomanIcon } from "components";
+import { team, coreValues } from "lib/about";
 import { ArrowRightIcon } from "@heroicons/react/outline";
 
 export default function About() {
-  
   return (
     <>
       <Navbar />
@@ -45,14 +44,15 @@ export default function About() {
           </p>
         </div>
       </section>
-      <section className="py-32 bg-primary">
+      <section className="py-32 bg-f0fff8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:grid grid-cols-3 gap-9">
-          <div className="text-white">
-            <img src="book.png" alt="" />
-            <h3 className="text-white font-bold text-2xl tracking-wide mt-6">
+          <div className="text-custom-gray">
+            <BookIcon />
+
+            <h3 className="text-primary font-bold text-2xl tracking-wide mt-8">
               Education
             </h3>
-            <p className="font-light text-base mt-6 leading-loose">
+            <p className="font-light text-base mt-12 leading-loose">
               We work on promoting rights to qualitative education through the
               human rights based approach to development. Bruderhilfe through
               community sensitization, mobilization, capacity building,
@@ -61,24 +61,24 @@ export default function About() {
               education sector in different parts of Nigeria.
             </p>
           </div>
-          <div className="text-white">
-            <img src="arrow.png" alt="" />
-            <h3 className="text-white font-bold text-2xl tracking-wide mt-6">
+          <div className="text-custom-gray">
+            <SocialIcon />
+            <h3 className="text-primary font-bold text-2xl tracking-wide mt-8">
               Social Inclusion
             </h3>
-            <p className="font-light text-base mt-6 leading-loose">
+            <p className="font-light text-base mt-12 leading-loose">
               We are committed to working on the sustainabile ways of improving
               the terms of participation in society, particularly for people who
               are disadvantaged, through enhancing opportunities, access to
               resources, voice and respect for rights.
             </p>
           </div>
-          <div className="text-white">
-            <img src="womenchildren.png" alt="" />
-            <h3 className="text-white font-bold text-2xl tracking-wide mt-6">
+          <div className="text-custom-gray">
+            <WomanIcon />
+            <h3 className="text-primary font-bold text-2xl tracking-wide mt-8">
               Women and Children
             </h3>
-            <p className="font-light text-base mt-6 leading-loose">
+            <p className="font-light text-base mt-12 leading-loose">
               We are working on promoting rights of women and children with
               specific emphasis on gender equity and gender sensitivity. We do
               these through empowerment like disbursement of seed grant to boost
@@ -90,12 +90,12 @@ export default function About() {
           </div>
         </div>
       </section>
-      <section className="py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+      <section className="py-32 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-30">
           <h2 className="font-bold text-custom-black text-5xl text-center">
             Our core values
           </h2>
-          <div className="mt-12">
+          <div className="mt-32">
             <div className="lg:grid grid-cols-3 gap-x-4 gap-y-16 ">
               {coreValues.map((item) => (
                 <div className="h-541px w-358 overflow-hidden" key={item.title}>
@@ -121,8 +121,11 @@ export default function About() {
             </div>
           </div>
         </div>
+        <div className="absolute p-[11.65rem] bg-pink bottom-0 inset-x-0">
+hi
+        </div>
       </section>
-      <section className="pt-64 pb-16 bg-custom-gray-light">
+      <section className="pt-64 pb-16 bg-pink">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
           <div className="w-1/2 relative">
             <img
@@ -167,15 +170,18 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="mt-32">
+        {/* <div className="mt-32">
           <h2 className="font-bold text-custom-black text-5xl text-center">
             Our team
           </h2>
-        </div>
+        </div> */}
       </section>
-      <section className="pt-12 pb-28">
+      <section className="py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ul className="lg:grid grid-cols-3 gap-x-8 gap-y-16">
+        <h2 className="font-bold text-custom-black text-5xl text-center">
+            Our team
+          </h2>
+          <ul className="lg:grid grid-cols-3 gap-x-8 gap-y-16 mt-24">
             {team.map((member) => (
               <li className="flex flex-col items-center px-4" key={member.name}>
                 <div className="relative h-28 w-28 rounded-full overflow-hidden">

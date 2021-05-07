@@ -1,4 +1,4 @@
-import { Navbar, Hero, Card,Footer } from "../components";
+import { Navbar, Hero, Card, Footer } from "../components";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import Link from "next/link";
@@ -88,7 +88,7 @@ export default function Home(params) {
           </div>
         </div>
       </section>
-      <section className="py-36">
+      <section className="pt-36">
         <div className="max-w-7xl bg-primary  relative">
           <div className="absolute w-full h-full">
             <img
@@ -140,7 +140,7 @@ export default function Home(params) {
           </div>
         </div>
       </section>
-      <section className="pb-32 pt-16">
+      <section className="pb-32 pt-32 bg-pink">
         <h2 className="font-extrabold text-custom-black text-4xl tracking-wide text-center">
           Our Thematic Areas
         </h2>
