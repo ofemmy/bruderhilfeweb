@@ -15,18 +15,18 @@ export default function Footer() {
             </a>
           </Link>
         </div>
-        <div>
+        <div className="leading-loose">
           <h3 className="text-custom-black font-semibold">Contact</h3>
           <div className="mt-4 font-light text-custom-gray">
             <p>1. Bola Ajibola Street, off Allen Avenue,</p>
             <p>Ikeja Lagos, Nigeria.</p>
-            <p className="mt-1">+234-8100015495</p>
+            <p className="">+234-8100015495</p>
             <p>+234-7035654677</p>
             <p>+234-8032963838</p>
-            <p className="mt-1">info@bruder-hilfe.com</p>
+            <p className="">info@bruder-hilfe.com</p>
           </div>
         </div>
-        <div>
+        <div className="leading-loose">
           <h3 className="text-custom-black font-semibold">Donate</h3>
           <div className="mt-4 font-light text-custom-gray">
             <p>Guaranty Trust Bank</p>
@@ -36,7 +36,7 @@ export default function Footer() {
               Acc No:{" "}
               <span className="text-custom-black font-normal">0263296599</span>
             </p>
-            <p className="mt-2">Keystone Bank</p>
+            <p className="mt-1">Keystone Bank</p>
             <p>Acc Name: Bruderhilfe Social</p>
             <p>Development Initiative</p>
             <p>

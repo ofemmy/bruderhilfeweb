@@ -1,63 +1,10 @@
 import React from "react";
 import { Navbar } from "../components";
+import { team,coreValues } from "lib/about";
+import { ArrowRightIcon } from "@heroicons/react/outline";
 
 export default function About() {
-  const coreValues = [
-    {
-      title: "Godliness",
-      text:
-        "We are moved and are guided by a sense of godliness manifested in showing love and concerns to our neighbours especially the disadvantaged and lowly ones as we love and value ourselved which God Himself exemplified.",
-      coverImg: "godliness.png",
-    },
-    {
-      title: "Helping",
-      text:
-        "We see ourselves as a group of people with helping hand to lift up the downtrodden from their lowly positions.",
-      coverImg: "helping.png",
-    },
-    {
-      title: "Brotherhood",
-      text:
-        "To be part of a people with the mind of extending hands of love and devoted service to make the society a better and more equitable one.",
-      coverImg: "brotherhood.png",
-    },
-    {
-      title: "Integrity",
-      text:
-        "We are determined to be steadfast, thorough, consistent in our activities, planning, and implementation and in abiding with values, principles that shaped our work.",
-      coverImg: "integrity.png",
-    },
-    {
-      title: "Transparency",
-      text:
-        "We are open in our conduct, in making decision and interaction with people regardless of status and condition.",
-      coverImg: "transparency.png",
-    },
-    {
-      title: "Accountability",
-      text:
-        "We are responsible and accountable for our actions as an organisation. We owe it as stewards to be accountable to God and to people He surrounds us with.",
-      coverImg: "accountability.png",
-    },
-    {
-      title: "Equity",
-      text:
-        "We are committed to a fair and impartial view of people and strongly believe in equal opportunities for everyone regardless of age, gender, race, religion, disability, location and health status.",
-      coverImg: "equity.png",
-    },
-    {
-      title: "Positive Attitude",
-      text:
-        "We are always guided by a sense of optimism in the successful implementation of our programmes despite the internal and external challenges that surrounds us.",
-      coverImg: "postive-attitude.png",
-    },
-    {
-      title: "Teamwork",
-      text:
-        "We energetically work together to bring an end to discrimination, socio-economic exclusion and poverty.",
-      coverImg: "teamwork.png",
-    },
-  ];
+  
   return (
     <>
       <Navbar />
@@ -99,7 +46,7 @@ export default function About() {
         </div>
       </section>
       <section className="py-32 bg-primary">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-3 gap-9">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:grid grid-cols-3 gap-9">
           <div className="text-white">
             <img src="book.png" alt="" />
             <h3 className="text-white font-bold text-2xl tracking-wide mt-6">
@@ -149,7 +96,7 @@ export default function About() {
             Our core values
           </h2>
           <div className="mt-12">
-            <div className="grid grid-cols-3 gap-x-4 gap-y-16 ">
+            <div className="lg:grid grid-cols-3 gap-x-4 gap-y-16 ">
               {coreValues.map((item) => (
                 <div className="h-541px w-358 overflow-hidden" key={item.title}>
                   <div className="h-[272px] relative w-358">
@@ -164,7 +111,7 @@ export default function About() {
                       <h3 className="font-semibold tracking-wide text-md">
                         {item.title}
                       </h3>
-                      <p className="mt-5 text-center text-md pb-2">
+                      <p className="mt-5 text-center text-md pb-2 leading-relaxed">
                         {item.text}
                       </p>
                     </div>
@@ -175,7 +122,7 @@ export default function About() {
           </div>
         </div>
       </section>
-      <section className="pt-64 pb-16 bg-custom-gray-light border border-red-400">
+      <section className="pt-64 pb-16 bg-custom-gray-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
           <div className="w-1/2 relative">
             <img
@@ -193,7 +140,7 @@ export default function About() {
             <h2 className="font-extrabold text-custom-black text-5xl">
               Our Objectives
             </h2>
-            <div className="grid grid-cols-2 gap-x-8 gap-y-12 font-light text-custom-gray mt-12 leading-loose">
+            <div className="lg:grid grid-cols-2 gap-x-8 gap-y-12 font-light text-custom-gray mt-12 leading-loose">
               <p>
                 To ensure an increased accessibility and provision of
                 socio-economic services for the less-privileged and the social
@@ -226,8 +173,41 @@ export default function About() {
           </h2>
         </div>
       </section>
-      <section className="p-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+      <section className="pt-12 pb-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ul className="lg:grid grid-cols-3 gap-x-8 gap-y-16">
+            {team.map((member) => (
+              <li className="flex flex-col items-center px-4" key={member.name}>
+                <div className="relative h-28 w-28 rounded-full overflow-hidden">
+                  <div className="absolute inset-0 h-full w-full">
+                    <img
+                      src={member.image}
+                      alt=""
+                      className="h-full w-full object-cover object-top"
+                    />
+                  </div>
+                </div>
+                <div className="mt-4 text-center space-y-1">
+                  <h3 className="text-custom-black font-semibold">
+                    {member.name}
+                  </h3>
+                  <h4 className="text-custom-gray-sub text-xs font-light">
+                    {member.position}
+                  </h4>
+                </div>
+                <div className="flex flex-col justify-center items-center">
+                  <p className="line-clamp-7 font-light text-center mt-8 leading-loose text-[#5e5e5e]">
+                    {member.description}
+                  </p>
+                  <button className="inline-flex text-center text-xs text-primary items-center space-x-1 mt-2 focus:outline-none">
+                    <span>Read More</span>
+                    <ArrowRightIcon className="h-3 w-3" />
+                  </button>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
     </>
   );
