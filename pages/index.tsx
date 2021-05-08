@@ -2,7 +2,8 @@ import { Navbar, Hero, Card, Footer } from "../components";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import Link from "next/link";
-import { useRef } from "react";
+import { useRouter } from "next/router";
+import { useRef, useEffect } from "react";
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/outline";
 export default function Home(params) {
   const swiperRef = useRef(null);
@@ -147,8 +148,8 @@ export default function Home(params) {
         <div className="ml-28 pt-16">
           <Swiper
             slidesPerView={3.5}
-            onSlideChange={() => console.log("slide change")}
-            onSwiper={(swiper) => console.log(swiper)}
+            onSlideChange={() => {}}
+            onSwiper={(swiper) => {}}
             onInit={(swiper) => (swiperRef.current = swiper)}
           >
             {thematic.map((thema, idx) => (

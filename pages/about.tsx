@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useRouter } from "next/router";
 import {
   BookIcon,
   Navbar,
@@ -10,16 +11,20 @@ import {
 import { team, coreValues } from "lib/about";
 import { ArrowRightIcon } from "@heroicons/react/outline";
 
+
 export default function About() {
+  
   return (
     <>
       <Navbar />
       <TextHero>
-      <h2 className="text-custom-black font-bold text-6xl">About us</h2>
-        <h3 className="text-custom-gray font-light">We help millions of the needy</h3>
+        <h2 className="text-custom-black font-bold text-6xl">About us</h2>
+        <h3 className="text-custom-gray font-light">
+          We help millions of the needy
+        </h3>
       </TextHero>
       <SubHero imgUrl="abouthero.png" />
-     
+
       <section className="py-24 bg-light-green">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center items-center space-y-6">
           <p className="font-light text-custom-gray text-sm">
