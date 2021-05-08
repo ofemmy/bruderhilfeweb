@@ -10,3 +10,5 @@ export { default as SocialIcon } from "./SocialIcon";
 export { default as WomanIcon } from "./WomanIcon";
 export { default as ArrowDownIcon } from "./ArrowDownIcon";
 export { default as ArrowUpIcon } from "./ArrowUpIcon";
+export { default as ArrowRightIcon } from "./ArrowRightIcon";
+export { default as ArrowLeftIcon } from "./ArrowLeftIcon";

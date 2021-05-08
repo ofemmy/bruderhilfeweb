@@ -14,7 +14,10 @@ export default function About() {
   return (
     <>
       <Navbar />
-      <TextHero title="About us" />
+      <TextHero>
+      <h2 className="text-custom-black font-bold text-6xl">About us</h2>
+        <h3 className="text-custom-gray font-light">We help millions of the needy</h3>
+      </TextHero>
       <SubHero imgUrl="abouthero.png" />
      
       <section className="py-24 bg-light-green">

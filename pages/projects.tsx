@@ -20,7 +20,12 @@ export default function Projects() {
   return (
     <>
       <Navbar />
-      <TextHero title="Projects" />
+      <TextHero>
+        <h2 className="text-custom-black font-bold text-6xl">Projects</h2>
+        <h3 className="text-custom-gray font-light">
+          We help millions of the needy
+        </h3>
+      </TextHero>
       <SubHero imgUrl="projectshero.png" />
       <section className="bg-primary">
         <div className="max-w-5xl py-28 mx-auto flex flex-col justify-center items-center font-light text-white text-lg leading-loose">
@@ -48,13 +53,16 @@ export default function Projects() {
               onInit={(swiper) => (swiperRef.current = swiper)}
               slidesPerColumnFill="row"
               spaceBetween={0}
-              onReachEnd={(swiper) => setIsBeginning(false)}
-              onReachBeginning={(swiper) => setIsBeginning(true)}
+              onSlideChange={(swiper) => {
+                setIsBeginning(swiper.isBeginning);
+              }}
+              // onReachEnd={(swiper) => setIsBeginning(false)}
+              // onReachBeginning={(swiper) => setIsBeginning(true)}
             >
               {projectList.map((project) => (
                 <SwiperSlide key={project.title}>
                   <Link href="/">
-                    <a className="h-40 bg-light-green text-custom-gray hover:bg-primary hover:text-white flex rounded-md overflow-hidden transition duration-200">
+                    <a className="h-40 bg-light-green text-custom-gray hover:bg-primary hover:shadow-2xl hover:text-white flex rounded-md overflow-hidden transition duration-200">
                       <div className="flex-1 p-6 flex  items-center">
                         <p className="text-2xl font-light">{project.title}</p>
                       </div>
