@@ -1,12 +1,13 @@
 import { Navbar, Hero, Card, Footer } from "../components";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/outline";
 export default function Home(params) {
   const swiperRef = useRef(null);
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
   const thematic = [
     {
       title: "Education",
@@ -69,7 +70,7 @@ export default function Home(params) {
             <h2 className="text-custom-black font-extrabold text-4xl tracking-wide mt-12">
               Our Vision
             </h2>
-            <p className="text-custom-gray leading-relaxed font-light text-md">
+            <p className="text-custom-gray leading-loose font-light text-md">
               Bruder Hilfe is a charity organization located in Nigeria and
               Germany, dedicated to improving the health, education, of
               children, men and women both in cities and rural areas through
@@ -81,11 +82,11 @@ export default function Home(params) {
               society and ensure the fulfilment of the right of all humans to
               live in security, dignity and peace.
             </p>
-            <Link href="/donate">
+            {/* <Link href="/donate">
               <a className="inline-flex items-center px-8 py-4 border border-transparent shadow-sm text-md leading-4 font-medium rounded-md text-white bg-primary hover:bg-primary-dark">
                 Learn More
               </a>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </section>
@@ -148,7 +149,10 @@ export default function Home(params) {
         <div className="ml-28 pt-16">
           <Swiper
             slidesPerView={3.5}
-            onSlideChange={() => {}}
+            onSlideChange={(swiper) => {
+              setIsBeginning(swiper.isBeginning);
+              setIsEnd(swiper.isEnd);
+            }}
             onSwiper={(swiper) => {}}
             onInit={(swiper) => (swiperRef.current = swiper)}
           >
@@ -163,7 +167,7 @@ export default function Home(params) {
           <button
             onClick={() => swiperRef.current.slidePrev()}
             className={`inline-flex items-center border border-transparent focus:outline-none ${
-              swiperRef.current?.isBeginning ? "text-gray-500" : "text-gray-800"
+              isBeginning ? "text-gray-500" : "text-gray-800"
             }`}
           >
             <ArrowLeftIcon className="h-6 w-12" />
@@ -171,7 +175,7 @@ export default function Home(params) {
           <button
             onClick={() => swiperRef.current.slideNext()}
             className={`inline-flex items-center border border-transparent focus:outline-none ${
-              swiperRef.current?.isEnd ? "text-gray-500" : "text-gray-800"
+              isEnd ? "text-gray-500" : "text-gray-800"
             }`}
           >
             <ArrowRightIcon className="h-6 w-12" />

@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Card({ thema }) {
   return (
-    <div className="h-[578px] w-[329px] border border-gray-300 rounded-b-2xl overflow-hidden bg-white">
+    <div className="h-[578px] w-[329px]  rounded-b-2xl overflow-hidden bg-white border border-gray-200">
       <div className="h-[272px]">
         <img src={thema.imgSrc} alt="Boy in school" className="h-full w-full object-cover" />
       </div>

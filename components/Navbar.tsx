@@ -39,7 +39,7 @@ export default function Navbar() {
         </div>
         <Link href="/donate">
           <a className="ml-12 inline-flex items-center px-6 py-4 border border-transparent shadow-sm leading-4 font-medium rounded-md text-white bg-primary hover:bg-primary-dark">
-            Donate Now
+            Donate
             <ArrowRightIcon
               className="ml-2 -mr-0.5 h-4 w-4"
               aria-hidden="true"

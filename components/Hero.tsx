@@ -45,7 +45,7 @@ export default function Hero() {
           <p>and marginalized members of the society.</p>
         </div>
         <Link href="/donate">
-          <a className="inline-flex items-center px-6 py-4 border border-transparent shadow-sm text-md leading-4 font-medium rounded-md text-white bg-primary hover:bg-primary-dark mt-1">
+          <a className="inline-flex items-center px-8 py-4 border border-transparent shadow-sm text-lg leading-4 font-medium rounded-md text-white bg-primary hover:bg-primary-dark mt-1">
             Learn More
           </a>
         </Link>
