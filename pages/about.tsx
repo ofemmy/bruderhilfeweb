@@ -1,5 +1,12 @@
 import React from "react";
-import { BookIcon, Navbar, SocialIcon, WomanIcon } from "components";
+import {
+  BookIcon,
+  Navbar,
+  SocialIcon,
+  SubHero,
+  TextHero,
+  WomanIcon,
+} from "components";
 import { team, coreValues } from "lib/about";
 import { ArrowRightIcon } from "@heroicons/react/outline";
 
@@ -7,19 +14,9 @@ export default function About() {
   return (
     <>
       <Navbar />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center items-center py-16">
-        <h2 className="text-custom-black font-bold text-6xl">About us</h2>
-      </div>
-      <section className="h-[585px] relative">
-        <div className="absolute inset-0">
-          <img
-            className="h-full w-full object-cover"
-            src="about.png"
-            alt="Two girls with the world map"
-          />
-        </div>
-        <div className="absolute inset-x-0 bottom-0 shadow h-[548px]"></div>
-      </section>
+      <TextHero title="About us" />
+      <SubHero imgUrl="abouthero.png" />
+     
       <section className="py-24 bg-light-green">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center items-center space-y-6">
           <p className="font-light text-custom-gray text-sm">
@@ -122,7 +119,7 @@ export default function About() {
           </div>
         </div>
         <div className="absolute p-[11.65rem] bg-pink bottom-0 inset-x-0">
-hi
+          hi
         </div>
       </section>
       <section className="pt-64 pb-16 bg-pink">
@@ -178,7 +175,7 @@ hi
       </section>
       <section className="py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="font-bold text-custom-black text-5xl text-center">
+          <h2 className="font-bold text-custom-black text-5xl text-center">
             Our team
           </h2>
           <ul className="lg:grid grid-cols-3 gap-x-8 gap-y-16 mt-24">

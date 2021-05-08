@@ -25,6 +25,9 @@ module.exports = {
       height: {
         "541px": "541px",
       },
+      spacing: {
+        22: "5.5rem",
+      },
       width: {
         358: "356px",
       },
@@ -33,6 +36,9 @@ module.exports = {
         8: "8",
         9: "9",
         10: "10",
+      },
+      animation: {
+        "bounce-slow": "bounce 2s linear infinite",
       },
     },
   },

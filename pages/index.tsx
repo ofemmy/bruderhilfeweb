@@ -125,7 +125,7 @@ export default function Home(params) {
                 </span>
               </p>
               <Link href="/donate">
-                <a className="inline-flex items-center px-8 py-4 border border-transparent shadow-sm text-md leading-4 font-medium rounded-md text-white bg-white text-primary hover:bg-light-green">
+                <a className="inline-flex items-center px-8 py-4 border border-transparent shadow-sm text-md leading-4 font-medium rounded-md  bg-white text-primary hover:bg-light-green">
                   Learn More
                 </a>
               </Link>
