@@ -6,60 +6,26 @@ import { useRef, useEffect, useState } from "react";
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/outline";
 import { sanityStaticProps, useSanityQuery } from "lib/sanity";
 import { groq } from "next-sanity";
+function parsePortableText(portableText) {
+  const paragraphs = portableText.map((item) => item.children[0].text);
+  return paragraphs;
+}
 export default function Home(props) {
-  const {data} = props;
+  const { pageData } = props;
+  const { heroSection, missionSection, thematicAreaSection } = pageData;
+  const [p1, p2] = parsePortableText(pageData.missionSection.text);
   const swiperRef = useRef(null);
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
-  const thematic = [
-    {
-      title: "Education",
-      actions: [
-        "Scholarship",
-        "Renovation of schools",
-        "Provision of educationsl materials",
-      ],
-      imgSrc: "education.png",
-    },
-    {
-      title: "Health",
-      actions: [
-        "Renovation of health centers",
-        "Medical outreaches to rural areas",
-        "Training of health workers",
-      ],
-      imgSrc: "health.png",
-    },
-    {
-      title: "Socio-economic empowerment",
-      actions: [
-        "Provision of mobility carts to people living with disabilities",
-        "Provision of seed grants to women and youths",
-        "Economic empowerment and training",
-        "Acess to financial services",
-      ],
-      imgSrc: "development.png",
-    },
-    {
-      title: "Advocacy",
-      actions: [
-        "Engaging in advocacy for inclusive governance",
-        "Organising seminars and training on transparency and accountability",
-        "Local community engagement",
-        "Creating awareness through the media",
-      ],
-      imgSrc: "advocacy.jpeg",
-    },
-  ];
   return (
     <>
       <Navbar />
-      <Hero hero={data.hero}/>
+      <Hero heroData={heroSection} />
       <section className="py-36">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center relative space-x-16">
           <div className="w-1/2 relative z-20">
             <img
-              src="vision.png"
+              src={missionSection.sectionImage.url}
               alt="Bruder Hilfe vision"
               className="w-full h-full relative z-20 object-cover"
             />
@@ -71,19 +37,10 @@ export default function Home(props) {
           </div>
           <div className="w-1/2 space-y-8">
             <h2 className="text-custom-black font-extrabold text-4xl tracking-wide mt-12">
-              Our Vision
+              {missionSection.sectionTitle}
             </h2>
             <p className="text-custom-gray leading-loose font-light text-md">
-              Bruder Hilfe is a charity organization located in Nigeria and
-              Germany, dedicated to improving the health, education, of
-              children, men and women both in cities and rural areas through
-              community projects, infrastructural projects thereby creating more
-              opportunities for children, adults and families in rural areas and
-              communities. <br /> Our mission is to embark on sustainable
-              social-economic initiatives and programmes that will lead to the
-              empowerment of the disadvantaged and marginalized members of the
-              society and ensure the fulfilment of the right of all humans to
-              live in security, dignity and peace.
+              {p1} <br /> {p2}
             </p>
             {/* <Link href="/donate">
               <a className="inline-flex items-center px-8 py-4 border border-transparent shadow-sm text-md leading-4 font-medium rounded-md text-white bg-primary hover:bg-primary-dark">
@@ -147,7 +104,7 @@ export default function Home(props) {
       </section>
       <section className="pb-32 pt-32 bg-pink">
         <h2 className="font-extrabold text-custom-black text-4xl tracking-wide text-center">
-          Our Thematic Areas
+          {thematicAreaSection.sectionTitle}
         </h2>
         <div className="ml-28 pt-16">
           <Swiper
@@ -159,8 +116,8 @@ export default function Home(props) {
             onSwiper={(swiper) => {}}
             onInit={(swiper) => (swiperRef.current = swiper)}
           >
-            {thematic.map((thema, idx) => (
-              <SwiperSlide key={thema.title}>
+            {thematicAreaSection.thematicAreas.map((thema, idx) => (
+              <SwiperSlide key={idx}>
                 <Card thema={thema} />
               </SwiperSlide>
             ))}
@@ -192,12 +149,25 @@ const query = groq`*[_type=='page'&& title=='Home Page']{
   "hero":sections[0]{heading,tagline,backgroundImage{"url":asset->url}},
  "mission":sections[1]->{cta{title,"route":route->slug.current},title,sectionImage{"url":asset->url},sectionTitle,text}
  }[0]`;
+const q2 = groq`*[_type=='pageSection' && sectionTitle=='Our Thematic Areas']{
+  sectionTitle,
+  "thematicAreas":children[]{"bulletPoints":text[]{children[0][]},"image":sectionImage.asset->url,sectionTitle} 
+}`;
 export async function getStaticProps(context) {
-  const page =  await sanityStaticProps({ context, query: query });
-console.log(page);
+  const queryResult = await Promise.all([
+    sanityStaticProps({ context, query: query }),
+    sanityStaticProps({ context, query: q2 }),
+  ]);
+
+  const pageData = {
+    heroSection: queryResult[0].data["hero"],
+    missionSection: queryResult[0].data["mission"],
+    thematicAreaSection: queryResult[1].data[0],
+  };
+
   return {
     props: {
-      data: page.data,
+      pageData,
     },
   };
 }

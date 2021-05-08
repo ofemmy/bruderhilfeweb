@@ -1,8 +1,8 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
 import Link from "next/link";
-export default function Hero({ hero }) {
-  const { heading, tagline,backgroundImage } = hero;
+export default function Hero({ heroData }) {
+  const { heading, tagline,backgroundImage } = heroData;
   const [line1,line2] = tagline.split("and");
   return (
     <div className="h-[832px] bg-primary relative overflow-hidden flex items-end justify-center">

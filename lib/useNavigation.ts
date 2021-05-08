@@ -12,7 +12,6 @@ export function useNavigation() {
         ? { ...route, active: true }
         : { ...route, active: false }
     );
-    console.log(newRoutes);
     setRoutes(newRoutes);
   };
   // const setCurrent = (currentRoute) => {
