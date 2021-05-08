@@ -1,13 +1,15 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
 import Link from "next/link";
-export default function Hero() {
+export default function Hero({ hero }) {
+  const { heading, tagline,backgroundImage } = hero;
+  const [line1,line2] = tagline.split("and");
   return (
     <div className="h-[832px] bg-primary relative overflow-hidden flex items-end justify-center">
       <div className="absolute inset-0">
         <img
           className="h-full w-full object-cover"
-          src="/test.png"
+          src={backgroundImage.url}
           alt="Two girls with the world map"
         />
       </div>
@@ -23,12 +25,7 @@ export default function Hero() {
             <Typewriter
               onInit={() => {}}
               options={{
-                strings: [
-                  "Discrimination",
-                  "Poverty",
-                  "Inequality",
-                  "Social Exclusion",
-                ],
+                strings: heading.split(","),
                 autoStart: true,
                 loop: true,
                 cursor: "",
@@ -39,10 +36,8 @@ export default function Hero() {
           </div>
         </h1>
         <div className="flex flex-col justify-center items-center text-sm lg:text-lg">
-          <p className="">
-            We seek the empowerment of the disadvantaged
-          </p>
-          <p>and marginalized members of the society.</p>
+          <p className="">{line1}</p>
+          <p>and {line2}</p>
         </div>
         <Link href="/donate">
           <a className="inline-flex items-center px-8 py-4 border border-transparent shadow-sm text-lg leading-4 font-medium rounded-md text-white bg-primary hover:bg-primary-dark mt-1">

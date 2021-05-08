@@ -4,7 +4,10 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useRef, useEffect, useState } from "react";
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/outline";
-export default function Home(params) {
+import { sanityStaticProps, useSanityQuery } from "lib/sanity";
+import { groq } from "next-sanity";
+export default function Home(props) {
+  const {data} = props;
   const swiperRef = useRef(null);
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
@@ -51,7 +54,7 @@ export default function Home(params) {
   return (
     <>
       <Navbar />
-      <Hero />
+      <Hero hero={data.hero}/>
       <section className="py-36">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center relative space-x-16">
           <div className="w-1/2 relative z-20">
@@ -184,4 +187,17 @@ export default function Home(params) {
       </section>
     </>
   );
+}
+const query = groq`*[_type=='page'&& title=='Home Page']{
+  "hero":sections[0]{heading,tagline,backgroundImage{"url":asset->url}},
+ "mission":sections[1]->{cta{title,"route":route->slug.current},title,sectionImage{"url":asset->url},sectionTitle,text}
+ }[0]`;
+export async function getStaticProps(context) {
+  const page =  await sanityStaticProps({ context, query: query });
+console.log(page);
+  return {
+    props: {
+      data: page.data,
+    },
+  };
 }
