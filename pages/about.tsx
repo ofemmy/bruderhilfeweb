@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
-import { useRouter } from "next/router";
+import { sanityStaticProps, useSanityQuery } from "lib/sanity";
+import { parsePortableText } from "lib/utils";
+import { groq } from "next-sanity";
 import {
   BookIcon,
   Navbar,
@@ -10,89 +12,47 @@ import {
 } from "components";
 import { team, coreValues } from "lib/about";
 import { ArrowRightIcon } from "@heroicons/react/outline";
+import { useIcon } from "../lib/useIcon";
 
-
-export default function About() {
-  
+export default function About({ pageData }) {
+  const { hero, whoWeAre, interventionAreas } = pageData;
+  const [p1, p2, p3] = parsePortableText(pageData.whoWeAre.text);
   return (
     <>
       <Navbar />
       <TextHero>
-        <h2 className="text-custom-black font-bold text-6xl">About us</h2>
+        <h2 className="text-custom-black font-bold text-6xl">{hero.heading}</h2>
         <h3 className="text-custom-gray font-light">
           We help millions of the needy
         </h3>
       </TextHero>
-      <SubHero imgUrl="abouthero.png" />
+      <SubHero imgUrl={hero.backgroundImageUrl} />
 
       <section className="py-24 bg-light-green">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center items-center space-y-6">
-          <p className="font-light text-custom-gray text-sm">
-            Bruderhilfe is a non-governmental organization duly registered with
-            the Corporate Affairs Comission (CAC) in 2017.
-          </p>
+          <p className="font-light text-custom-gray text-sm">{p1}</p>
           <p className="text-2xl text-custom-black text-center leading-loose">
-            Bruderhilfe is dedicated to improving the health, education of
-            children and youth in rural and urban societies, embarking on
-            sustainable community development projects, and creating
-            socio-economic opportunities for children, women and families in
-            rural communities.
+            {p2}
           </p>
           <p className="text-md text-custom-gray text-center font-light leading-loose">
-            We focus on the excluded members of the societies, the less
-            privileged and rural, hard-to-reach communities with little access
-            to socio-economic development programmes of government and private
-            corporations. The organisation &#40;as our name translated into
-            English <em>Brotherly Help</em> indicates&#41; seeks as a broad goal
-            to improve the quality of life for all, but with particular emphasis
-            on the vulnerable and undeserved populations.
+            {p3}
           </p>
         </div>
       </section>
       <section className="py-32 bg-f0fff8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:grid grid-cols-3 gap-9">
-          <div className="text-custom-gray">
-            <BookIcon />
+          {interventionAreas.areas.map((area) => (
+            <div className="text-custom-gray" key={area.sectionTitle}>
+              {useIcon(area.sectionTitle)}
 
-            <h3 className="text-primary font-bold text-2xl tracking-wide mt-8">
-              Education
-            </h3>
-            <p className="font-light text-base mt-12 leading-loose">
-              We work on promoting rights to qualitative education through the
-              human rights based approach to development. Bruderhilfe through
-              community sensitization, mobilization, capacity building,
-              scholarships, and project modelling with specific emphasis on
-              basis education is working and will continue to work in the basic
-              education sector in different parts of Nigeria.
-            </p>
-          </div>
-          <div className="text-custom-gray">
-            <SocialIcon />
-            <h3 className="text-primary font-bold text-2xl tracking-wide mt-8">
-              Social Inclusion
-            </h3>
-            <p className="font-light text-base mt-12 leading-loose">
-              We are committed to working on the sustainabile ways of improving
-              the terms of participation in society, particularly for people who
-              are disadvantaged, through enhancing opportunities, access to
-              resources, voice and respect for rights.
-            </p>
-          </div>
-          <div className="text-custom-gray">
-            <WomanIcon />
-            <h3 className="text-primary font-bold text-2xl tracking-wide mt-8">
-              Women and Children
-            </h3>
-            <p className="font-light text-base mt-12 leading-loose">
-              We are working on promoting rights of women and children with
-              specific emphasis on gender equity and gender sensitivity. We do
-              these through empowerment like disbursement of seed grant to boost
-              local businesses of women, renovation and provision of educational
-              materials for childreb in educationally disadvantaged regions, all
-              with the aim of improving livelihoods of families in rural
-              communities.
-            </p>
-          </div>
+              <h3 className="text-primary font-bold text-2xl tracking-wide mt-8">
+                {area.sectionTitle}
+              </h3>
+              <p className="font-light text-base mt-12 leading-loose">
+                {parsePortableText(area.text)}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
       <section className="py-32 relative">
@@ -175,11 +135,6 @@ export default function About() {
             </div>
           </div>
         </div>
-        {/* <div className="mt-32">
-          <h2 className="font-bold text-custom-black text-5xl text-center">
-            Our team
-          </h2>
-        </div> */}
       </section>
       <section className="py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -222,4 +177,18 @@ export default function About() {
       </section>
     </>
   );
+}
+const pageQuery = groq`*[_type=='page' && title=='About us']{
+  "hero":sections[0]{"backgroundImageUrl":backgroundImage.asset->url,heading},
+  "whoWeAre":sections[1]->{text},
+  "interventionAreas":sections[2]->{sectionTitle,"areas":children[]{sectionTitle,text}}
+}[0]`;
+export async function getStaticProps(context) {
+  const res = await sanityStaticProps({ context, query: pageQuery });
+
+  return {
+    props: {
+      pageData: res.data,
+    },
+  };
 }

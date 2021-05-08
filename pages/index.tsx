@@ -5,11 +5,9 @@ import { useRouter } from "next/router";
 import { useRef, useEffect, useState } from "react";
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/outline";
 import { sanityStaticProps, useSanityQuery } from "lib/sanity";
+import { parsePortableText } from "lib/utils";
 import { groq } from "next-sanity";
-function parsePortableText(portableText) {
-  const paragraphs = portableText.map((item) => item.children[0].text);
-  return paragraphs;
-}
+
 export default function Home(props) {
   const { pageData } = props;
   const { heroSection, missionSection, thematicAreaSection } = pageData;

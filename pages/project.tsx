@@ -5,7 +5,10 @@ import {
   SubHero,
   ArrowLeftIcon,
   ArrowRightIcon,
-} from "../components";
+} from "components";
+import { sanityStaticProps, useSanityQuery } from "lib/sanity";
+import { parsePortableText } from "lib/utils";
+import { groq } from "next-sanity";
 import { Swiper, SwiperSlide } from "swiper/react";
 export default function Project() {
   const swiperRef = useRef(null);
@@ -136,3 +139,12 @@ export default function Project() {
     </>
   );
 }
+const query = groq`*[_type=='project']{
+  projectName,
+  "slug":titleSlug.current,
+  location,
+  date,
+  "coverImg":coverImage.asset->url,
+  "description":description[],
+  "images":images[]{"urls":asset->url}
+}[]`
