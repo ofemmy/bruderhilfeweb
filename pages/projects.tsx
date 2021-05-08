@@ -11,23 +11,11 @@ import { imageUrlBuilder, sanityStaticProps } from "lib/sanity";
 import { groq } from "next-sanity";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import SwiperCore, { Autoplay } from "swiper";
+SwiperCore.use([Autoplay]);
 export default function Projects({ pageData }) {
-  console.log(pageData);
-  // const [isBeginning, setIsBeginning] = useState(true);
-  // const [isEnd, setIsEnd] = useState(false);
-  // const [direction, setDirection] = useState("down");
   const swiperRef = useRef(null);
-  // const scroll = (swiper) => {
-  //   console.log("begin", swiperRef.current.isBeginning);
-  //   console.log("end", swiperRef.current.isEnd);
-  //   if (direction === "down") {
-  //     swiperRef.current.slideNext();
-  //   }
-  //   if (direction === "up") {
-  //     swiperRef.current.slidePrev();
-  //   }
-  // };
+
   return (
     <>
       <Navbar />
@@ -59,11 +47,12 @@ export default function Projects({ pageData }) {
           <div className="w-1/2 h-[810px] overflow-hidden">
             <Swiper
               height={810}
+              autoplay
               direction="vertical"
-              slidesPerView={4.7}
+              slidesPerView={4}
               onInit={(swiper) => (swiperRef.current = swiper)}
               slidesPerColumnFill="row"
-              spaceBetween={0}
+              spaceBetween={55}
               onSlideChange={(swiper) => {
                 if (swiper.isBeginning && !swiper.isEnd) {
                   console.log("down");
