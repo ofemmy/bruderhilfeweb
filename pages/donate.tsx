@@ -2,7 +2,7 @@ import React from "react";
 import { Navbar, SubHero, TextHero } from "components";
 import { ArrowRightIcon } from "@heroicons/react/outline";
 import { budgetListings } from "lib/current";
-export default function Current() {
+export default function Donate() {
   return (
     <>
       <Navbar />

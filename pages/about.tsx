@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { sanityStaticProps, useSanityQuery } from "lib/sanity";
-import { parsePortableText } from "lib/utils";
+import { classNames, parsePortableText } from "lib/utils";
 import { groq } from "next-sanity";
 import {
   BookIcon,
@@ -17,6 +17,11 @@ import { useIcon } from "../lib/useIcon";
 export default function About({ pageData }) {
   const { hero, whoWeAre, interventionAreas } = pageData;
   const [p1, p2, p3] = parsePortableText(pageData.whoWeAre.text);
+  const testRef = useRef(null);
+  const showMore = (e) =>
+    e.target.parentNode.parentNode.firstElementChild.classList.toggle(
+      "line-clamp-7"
+    );
   return (
     <>
       <Navbar />
@@ -40,7 +45,7 @@ export default function About({ pageData }) {
         </div>
       </section>
       <section className="py-32 bg-f0fff8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:grid grid-cols-3 gap-9">
+        <div className="max-w-7xl mx-auto  px-4 sm:px-6 lg:px-8 lg:grid grid-cols-3 gap-6">
           {interventionAreas.areas.map((area) => (
             <div className="text-custom-gray" key={area.sectionTitle}>
               {useIcon(area.sectionTitle)}
@@ -86,9 +91,7 @@ export default function About({ pageData }) {
             </div>
           </div>
         </div>
-        <div className="absolute p-[11.65rem] bg-pink bottom-0 inset-x-0">
-          hi
-        </div>
+        <div className="absolute p-[11.65rem] bg-pink bottom-0 inset-x-0"></div>
       </section>
       <section className="pt-64 pb-16 bg-pink">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
@@ -162,10 +165,17 @@ export default function About({ pageData }) {
                   </h4>
                 </div>
                 <div className="flex flex-col justify-center items-center">
-                  <p className="line-clamp-7 font-light text-center mt-8 leading-loose text-[#5e5e5e]">
+                  <p
+                    className={classNames(
+                      "line-clamp-7 font-light text-center mt-8 leading-loose text-[#5e5e5e]"
+                    )}
+                  >
                     {member.description}
                   </p>
-                  <button className="inline-flex text-center text-xs text-primary items-center space-x-1 mt-2 focus:outline-none">
+                  <button
+                    onClick={showMore}
+                    className="inline-flex text-center text-xs text-primary items-center space-x-1 mt-2 focus:outline-none"
+                  >
                     <span>Read More</span>
                     <ArrowRightIcon className="h-3 w-3" />
                   </button>

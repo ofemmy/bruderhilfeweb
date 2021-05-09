@@ -49,13 +49,13 @@ export default function Footer() {
           <h3 className="text-custom-black font-semibold">Connect with us</h3>
           <div className="flex space-x-6 mt-4">
             <a href="/">
-              <img src="facebook.png" alt="" />
+              <img src="/facebook.png" alt="" />
             </a >
             <a href="/">
-              <img src="twitter.png" alt="" />
+              <img src="/twitter.png" alt="" />
             </a>
             <a href="/">
-              <img src="instagram.png" alt="" />
+              <img src="/instagram.png" alt="" />
             </a>
           </div>
         </div>

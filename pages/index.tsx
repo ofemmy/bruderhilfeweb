@@ -106,6 +106,7 @@ export default function Home(props) {
         </h2>
         <div className="ml-28 pt-16">
           <Swiper
+        
             slidesPerView={3.5}
             onSlideChange={(swiper) => {
               setIsBeginning(swiper.isBeginning);

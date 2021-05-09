@@ -6,7 +6,7 @@ import {
   ArrowDownIcon,
   ArrowUpIcon,
 } from "components";
-import { projectList } from "lib/projects";
+
 import { imageUrlBuilder, sanityStaticProps } from "lib/sanity";
 import { groq } from "next-sanity";
 import Link from "next/link";
@@ -52,19 +52,7 @@ export default function Projects({ pageData }) {
               slidesPerView={4}
               onInit={(swiper) => (swiperRef.current = swiper)}
               slidesPerColumnFill="row"
-              spaceBetween={55}
-              onSlideChange={(swiper) => {
-                if (swiper.isBeginning && !swiper.isEnd) {
-                  console.log("down");
-                }
-                if (swiper.isEnd) {
-                  console.log("up");
-                }
-                // setIsBeginning(swiper.isBeginning);
-                // setIsEnd(swiper.isEnd);
-              }}
-              // onReachEnd={(swiper) => setIsBeginning(false)}
-              // onReachBeginning={(swiper) => setIsBeginning(true)}
+              spaceBetween={55}  
             >
               {pageData.map((project) => (
                 <SwiperSlide key={project.slug}>

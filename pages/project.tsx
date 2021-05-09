@@ -10,6 +10,7 @@ import { sanityStaticProps, useSanityQuery } from "lib/sanity";
 import { parsePortableText } from "lib/utils";
 import { groq } from "next-sanity";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { ParsedUrlQuery } from "querystring";
 export default function Project() {
   const swiperRef = useRef(null);
   const [isBeginning, setIsBeginning] = useState(false);
@@ -139,12 +140,46 @@ export default function Project() {
     </>
   );
 }
-const query = groq`*[_type=='project']{
-  projectName,
-  "slug":titleSlug.current,
+const query = groq`*[_type=='project' && projectName == "Project inclusive at Kwara" ]{
+  "current":{
+    projectName,
+    description,
+    date,
+    "images":images[]{"url":asset->url},
   location,
-  date,
-  "coverImg":coverImage.asset->url,
-  "description":description[],
-  "images":images[]{"urls":asset->url}
-}[]`
+  "slug":titleSlug.current,
+  "coverImg":coverImage.asset->url
+  },
+  "next":*[_type=="project" && _createdAt > ^._createdAt]{
+    projectName,
+    description,
+    date,
+    "images":images[]{"url":asset->url},
+  location,
+  "slug":titleSlug.current,
+  "coverImg":coverImage.asset->url
+  }[0],
+"previous":*[_type=="project" && _createdAt < ^._createdAt]{
+    projectName,
+    description,
+    date,
+    "images":images[]{"url":asset->url},
+  location,
+  "slug":titleSlug.current,
+  "coverImg":coverImage.asset->url
+  }[0],
+}`;
+const slugQuery = groq`*[_type=="project"]{"slug":titleSlug.current}`;
+// export async function getStaticPaths(context) {
+//   const { data } = await sanityStaticProps<any, ParsedUrlQuery>({
+//     context,
+//     query: slugQuery,
+//   });
+//   console.log(data);
+//   const x = data.map((data) => ({ params: { slug: data.slug } }));
+//   console.log(x);
+//   return {
+//     paths: [{ params: { id: 1 } }],
+//     fallback: false,
+//   };
+// }
