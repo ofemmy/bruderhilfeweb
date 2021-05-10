@@ -94,25 +94,25 @@ export default function About({ pageData }) {
         </div>
         <div className="absolute p-[11.65rem] bg-pink bottom-0 inset-x-0"></div>
       </section>
-      <section className="pt-64 pb-16 bg-pink">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
-          <div className="w-1/2 relative">
+      <section className="pt-16  pb-16 bg-pink">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse lg:flex-row items-center lg:space-x-12">
+          <div className="lg:w-1/2 relative mt-12 lg:mt-0 lg:h-[667px]  rounded-xl">
             <img
               src="objectives.png"
               alt=""
-              className=" relative z-20 object-cover"
+              className=" relative z-20 object-cover h-full"
             />
             <img
               src="pattern2.png"
-              alt=""
-              className="absolute -top-20 -left-16"
+              alt="pattern"
+            className="absolute -bottom-16 -right-16 lg:-top-20 lg:-left-16"
             />
           </div>
-          <div className="w-1/2">
-            <h2 className="font-extrabold text-custom-black text-5xl">
+          <div className="lg:w-1/2">
+            <h2 className="font-extrabold text-custom-black text-3xl text-center lg:text-left lg:text-5xl">
               Our Objectives
             </h2>
-            <div className="lg:grid grid-cols-2 gap-x-8 gap-y-12 font-light text-custom-gray mt-12 leading-loose">
+            <div className="lg:grid grid-cols-2 gap-x-8 gap-y-6 xl:gap-y-12 font-light text-custom-gray mt-6 xl:mt-12 leading-loose">
               <p>
                 To ensure an increased accessibility and provision of
                 socio-economic services for the less-privileged and the social
