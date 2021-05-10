@@ -36,7 +36,7 @@ export default function Donate() {
       </div>
       <section className="bg-light-green py-20 lg:py-64">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center items-center">
-          <p className="lg:text-center text-custom-gray leading-loose font-light lg:text-xl">
+          <p className="lg:text-center text-custom-gray leading-loose font-light lg:text-md">
             Project Karakata (Kara-kata been a Yoruba parlance name for Economic
             and commercial activities that is inclusive) focuses on deploying
             and implementing practical and sustainable economic empowerment and
