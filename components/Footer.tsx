@@ -3,8 +3,8 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <div className="bg-custom-gray-light py-24">
-      <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-4 gap-6">
+    <div className="bg-custom-gray-light py-12 lg:py-24">
+      <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:grid grid-cols-4 gap-6 space-y-6">
         <div>
           <Link href="/">
             <a className="flex-none">
@@ -17,7 +17,7 @@ export default function Footer() {
         </div>
         <div className="leading-loose">
           <h3 className="text-custom-black font-semibold">Contact</h3>
-          <div className="mt-4 font-light text-custom-gray">
+          <div className="lg:mt-4 font-light text-custom-gray">
             <p>1. Bola Ajibola Street, off Allen Avenue,</p>
             <p>Ikeja Lagos, Nigeria.</p>
             <p className="">+234-8100015495</p>
@@ -28,7 +28,7 @@ export default function Footer() {
         </div>
         <div className="leading-loose">
           <h3 className="text-custom-black font-semibold">Donate</h3>
-          <div className="mt-4 font-light text-custom-gray">
+          <div className="lg:mt-4 font-light text-custom-gray">
             <p>Guaranty Trust Bank</p>
             <p>Acc Name: Bruderhilfe Social</p>
             <p>Development Initiative</p>
@@ -36,7 +36,7 @@ export default function Footer() {
               Acc No:{" "}
               <span className="text-custom-black font-normal">0263296599</span>
             </p>
-            <p className="mt-1">Keystone Bank</p>
+            <p className="lg:mt-1 mt-4">Keystone Bank</p>
             <p>Acc Name: Bruderhilfe Social</p>
             <p>Development Initiative</p>
             <p>
