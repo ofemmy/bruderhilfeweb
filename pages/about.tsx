@@ -140,12 +140,12 @@ export default function About({ pageData }) {
           </div>
         </div>
       </section>
-      <section className="py-32">
+      <section className="py-12 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-bold text-custom-black text-5xl text-center">
             Our team
           </h2>
-          <ul className="lg:grid grid-cols-3 gap-x-8 gap-y-16 mt-24">
+          <ul className="space-y-12 lg:space-y-0 lg:grid grid-cols-3 gap-x-8 gap-y-16 mt-12 lg:mt-24">
             {team.map((member) => (
               <li className="flex flex-col items-center px-4" key={member.name}>
                 <div className="relative h-28 w-28 rounded-full overflow-hidden">
