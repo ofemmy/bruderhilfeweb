@@ -2,9 +2,10 @@ import React from "react";
 function parsePortableList(portableList) {
   return portableList.map((item) => item.children.text);
 }
+//329
 export default function Card({ thema }) {
   return (
-    <div className="h-[578px] w-[329px]  rounded-b-2xl overflow-hidden bg-white border border-gray-200">
+    <div className="h-[578px] w-[329px] rounded-b-2xl overflow-hidden bg-white border border-gray-200">
       <div className="h-[272px]">
         <img
           src={thema.image}

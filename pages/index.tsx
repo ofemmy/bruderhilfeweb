@@ -20,7 +20,7 @@ export default function Home(props) {
       <Navbar />
       <Hero heroData={heroSection} />
       <section className="lg:py-36 py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse items-center lg:flex-row lg:justify-center relative lg:space-x-16">
+        <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 flex flex-col-reverse items-center lg:flex-row lg:justify-center relative lg:space-x-16">
           <div className="mt-12 lg:mt-0 h-[433px] lg:h-full  lg:w-1/2 relative z-20">
             <img
               src={missionSection.sectionImage.url}
@@ -34,13 +34,12 @@ export default function Home(props) {
             />
           </div>
           <div className="lg:w-1/2 space-y-8">
-            <h2 className="text-center lg:text-left text-custom-black font-extrabold text-4xl tracking-wide mt-12 lg:mt-0">
+            <h2 className="text-center lg:text-left text-custom-black font-extrabold text-3xl lg:text-4xl tracking-wide mt-12 lg:mt-0">
               {missionSection.sectionTitle}
             </h2>
             <p className="text-custom-gray leading-loose font-light text-md">
               {p1} <br /> {p2}
             </p>
-           
           </div>
         </div>
       </section>
@@ -54,12 +53,12 @@ export default function Home(props) {
             />
           </div>
           <div className="absolute inset-0 bg-primary bg-opacity-95"></div>
-          <div className="relative mx-auto flex justify-between py-16 pl-28 space-x-20">
-            <div className="space-y-8 text-white w-1/2">
-              <h2 className="font-extrabold text-4xl tracking-wide">
-                Project K&aacute;r&agrave; - K&aacute;t&agrave;
+          <div className="relative mx-auto px-6 sm:px-6 lg:px-0 flex flex-col items-center justify-center lg:items-start lg:flex-row lg:justify-between py-16 lg:pl-28 lg:space-x-20">
+            <div className="space-y-8 text-white lg:w-1/2 flex flex-col justify-center items-center lg:items-start lg:justify-start">
+              <h2 className="font-extrabold  text-3xl lg:text-4xl tracking-wide text-center lg:text-left mt-12 lg:mt-0">
+                Project Karakata
               </h2>
-              <p className="leading-relaxed font-light text-md">
+              <p className="leading-loose font-light text-md">
                 <span>
                   Project Kárà -Kátà (Kárà -Kátà being a Yoruba parlance name
                   for economic and commercial activites that is inclusive)
@@ -86,7 +85,8 @@ export default function Home(props) {
                 </a>
               </Link>
             </div>
-            <div className="bg-white rounded-t-lg overflow-hidden transform -translate-y-36">
+
+            <div className="bg-white rounded-t-lg overflow-hidden transform translate-y-32 w-full lg:-translate-y-36  translate-x-7 lg:translate-x-0">
               <img
                 src="helping-woman.png"
                 alt=""
@@ -97,13 +97,17 @@ export default function Home(props) {
         </div>
       </section>
       <section className="pb-32 pt-32 bg-pink">
-        <h2 className="font-extrabold text-custom-black text-4xl tracking-wide text-center">
+        <h2 className="font-extrabold text-custom-black text-3xl lg:text-4xl tracking-wide text-center">
           {thematicAreaSection.sectionTitle}
         </h2>
-        <div className="ml-28 pt-16">
+        <div className="hidden md:block ml-12 lg:ml-24 pt-16">
           <Swiper
-        
-            slidesPerView={3.5}
+            breakpoints={{
+              1024: { slidesPerView: 2.5,spaceBetween:30 },
+              1280: { slidesPerView: 3.7 },
+            }}
+            slidesPerView={2.2}
+            spaceBetween={20}
             onSlideChange={(swiper) => {
               setIsBeginning(swiper.isBeginning);
               setIsEnd(swiper.isEnd);
@@ -118,7 +122,12 @@ export default function Home(props) {
             ))}
           </Swiper>
         </div>
-        <div className="flex justify-end mt-4 space-x-1 px-8">
+        <div className="md:hidden pt-16 flex flex-col justify-center items-center space-y-12">
+          {thematicAreaSection.thematicAreas.map((thema, idx) => (
+            <Card thema={thema} key={idx}/>
+          ))}
+        </div>
+        <div className="hidden md:flex justify-end mt-4 space-x-1 px-8">
           <button
             onClick={() => swiperRef.current.slidePrev()}
             className={`inline-flex items-center border border-transparent focus:outline-none ${
