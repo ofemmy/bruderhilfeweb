@@ -58,7 +58,7 @@ export default function Home(props) {
               <h2 className="font-extrabold  text-3xl lg:text-4xl tracking-wide text-center lg:text-left mt-12 lg:mt-0">
                 Project Karakata
               </h2>
-              <p className="leading-loose font-light text-md">
+              <p className="leading-loose font-light text-md relative w-full">
                 <span>
                   Project Kárà -Kátà (Kárà -Kátà being a Yoruba parlance name
                   for economic and commercial activites that is inclusive)
@@ -80,7 +80,7 @@ export default function Home(props) {
                 </span>
               </p>
               <Link href="/donate">
-                <a className="inline-flex items-center px-8 py-4 border border-transparent shadow-sm text-md leading-4 font-medium rounded-md  bg-white text-primary hover:bg-light-green">
+                <a className=" inline-flex items-center px-8 py-4 border border-transparent shadow-sm text-md leading-4 font-medium rounded-md  bg-white text-primary hover:bg-light-green">
                   Learn More
                 </a>
               </Link>

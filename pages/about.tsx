@@ -26,7 +26,7 @@ export default function About({ pageData }) {
     <>
       <Navbar />
       <TextHero>
-        <h2 className="text-custom-black font-bold text-6xl">{hero.heading}</h2>
+        <h2 className="text-custom-black font-bold text-3xl lg:text-4xl xl:text-6xl">{hero.heading}</h2>
         <h3 className="text-custom-gray font-light">
           We help millions of the needy
         </h3>
@@ -35,7 +35,7 @@ export default function About({ pageData }) {
 
       <section className="py-24 bg-light-green">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center items-center space-y-6">
-          <p className="font-light text-custom-gray text-sm">{p1}</p>
+          <p className="font-light text-custom-gray text-sm text-center leading-loose">{p1}</p>
           <p className="text-2xl text-custom-black text-center leading-loose">
             {p2}
           </p>
@@ -44,8 +44,8 @@ export default function About({ pageData }) {
           </p>
         </div>
       </section>
-      <section className="py-32 bg-f0fff8">
-        <div className="max-w-7xl mx-auto  px-4 sm:px-6 lg:px-8 lg:grid grid-cols-3 gap-6">
+      <section className="py-16 lg:py-32 bg-f0fff8">
+        <div className="max-w-7xl mx-auto space-y-12 lg:space-y-0 px-4 sm:px-6 lg:px-8 lg:grid grid-cols-3 gap-6">
           {interventionAreas.areas.map((area) => (
             <div className="text-custom-gray" key={area.sectionTitle}>
               {useIcon(area.sectionTitle)}
@@ -53,23 +53,24 @@ export default function About({ pageData }) {
               <h3 className="text-primary font-bold text-2xl tracking-wide mt-8">
                 {area.sectionTitle}
               </h3>
-              <p className="font-light text-base mt-12 leading-loose">
+              <p className="font-light text-base mt-8 lg:mt-12 leading-loose">
                 {parsePortableText(area.text)}
               </p>
             </div>
           ))}
         </div>
       </section>
-      <section className="py-32 relative">
+      <section className="py-8 lg:py-32 relative">
+        <div className="lg:hidden absolute top-0 inset-0 h-80 bg-f0fff8"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-30">
-          <h2 className="font-bold text-custom-black text-5xl text-center">
+          <h2 className="font-bold text-custom-black text-3xl lg:text-5xl text-center">
             Our core values
           </h2>
-          <div className="mt-32">
-            <div className="lg:grid grid-cols-3 gap-x-4 gap-y-16 ">
+          <div className="mt-12 lg:mt-32">
+            <div className="space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-4 lg:gap-y-16 ">
               {coreValues.map((item) => (
-                <div className="h-541px w-358 overflow-hidden" key={item.title}>
-                  <div className="h-[272px] relative w-358">
+                <div className="h-541px lg:w-300 xl:w-358 overflow-hidden" key={item.title}>
+                  <div className="h-[272px] relative lg:w-300 xl:w-358">
                     <img
                       src={item.coverImg}
                       alt=""
@@ -81,7 +82,7 @@ export default function About({ pageData }) {
                       <h3 className="font-semibold tracking-wide text-md">
                         {item.title}
                       </h3>
-                      <p className="mt-5 text-center text-md pb-2 leading-relaxed">
+                      <p className="mt-5 lg:mt-2 xl:mt-5 text-center text-md pb-2 leading-relaxed">
                         {item.text}
                       </p>
                     </div>
