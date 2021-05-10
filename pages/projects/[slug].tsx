@@ -196,7 +196,7 @@ export default function Project(props) {
         {previous ? (
             <Link href={`/projects/${previous?.slug ?? ""}`}>
               <a
-                className="inline-flex items-center px-4 py-2 border border-transparent text-md font-light rounded-md text-deep-purple  border-deep-purple hover:bg-deep-purple focus:outline-none focus:ring-2 focus:ring-offset-2 overflow-ellipsis
+                className="lg:hidden inline-flex items-center px-4 py-2 border border-transparent text-md font-light rounded-md text-deep-purple  border-deep-purple hover:bg-deep-purple focus:outline-none focus:ring-2 focus:ring-offset-2 overflow-ellipsis
             hover:text-white focus:ring-deep-purple space-x-2 absolute left-4"
               >
                 <span>
@@ -208,7 +208,7 @@ export default function Project(props) {
           ) : (
             <Link href={`/projects`}>
               <a
-                className="inline-flex items-center px-4 py-2 border border-transparent text-md font-light rounded-md text-deep-purple  border-deep-purple hover:bg-deep-purple focus:outline-none focus:ring-2 focus:ring-offset-2 overflow-ellipsis
+                className="lg:hidden inline-flex items-center px-4 py-2 border border-transparent text-md font-light rounded-md text-deep-purple  border-deep-purple hover:bg-deep-purple focus:outline-none focus:ring-2 focus:ring-offset-2 overflow-ellipsis
             hover:text-white focus:ring-deep-purple space-x-2 absolute left-4"
               >
                 <span>
@@ -221,7 +221,7 @@ export default function Project(props) {
           {next ? (
             <Link href={`/projects/${next?.slug ?? ""}`}>
               <a
-                className="inline-flex items-center px-4 py-2 border border-transparent text-md font-light rounded-md text-deep-purple  border-deep-purple hover:bg-deep-purple focus:outline-none focus:ring-2 focus:ring-offset-2
+                className="lg:hidden inline-flex items-center px-4 py-2 border border-transparent text-md font-light rounded-md text-deep-purple  border-deep-purple hover:bg-deep-purple focus:outline-none focus:ring-2 focus:ring-offset-2
             hover:text-white focus:ring-deep-purple space-x-2 absolute right-4 overflow-ellipsis"
               >
                 <span>Next</span>
