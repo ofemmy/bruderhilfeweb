@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import Head from "next/head"
 import {
   Navbar,
   TextHero,
@@ -18,6 +19,9 @@ export default function Projects({ pageData }) {
 
   return (
     <>
+    <Head>
+        <title>Projects | Bruder Hilfe Social Development Initiative</title>
+      </Head>
       <Navbar />
       <TextHero>
         <h2 className="text-custom-black font-bold text-3xl lg:text-6xl">Projects</h2>

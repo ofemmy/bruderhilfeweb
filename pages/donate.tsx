@@ -1,10 +1,14 @@
 import React from "react";
+import Head from "next/head";
 import { Navbar, SubHero, TextHero } from "components";
 import { ArrowRightIcon } from "@heroicons/react/outline";
 import { budgetListings } from "lib/current";
 export default function Donate() {
   return (
     <>
+    <Head>
+        <title>Donate | Bruder Hilfe Social Development Initiative</title>
+      </Head>
       <Navbar />
       <TextHero>
         <h2 className="text-custom-black font-bold text-3xl lg:text-6xl">

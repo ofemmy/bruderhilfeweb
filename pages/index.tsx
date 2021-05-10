@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { Navbar, Hero, Card, Footer } from "../components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Link from "next/link";
@@ -17,6 +18,9 @@ export default function Home(props) {
   const [isEnd, setIsEnd] = useState(false);
   return (
     <>
+    <Head>
+        <title>Welcome | Bruder Hilfe Social Development Initiative</title>
+      </Head>
       <Navbar />
       <Hero heroData={heroSection} />
       <section className="lg:py-36 py-8">

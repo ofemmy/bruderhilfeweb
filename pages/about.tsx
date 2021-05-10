@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import Head from "next/head";
 import { sanityStaticProps, useSanityQuery } from "lib/sanity";
 import { classNames, parsePortableText } from "lib/utils";
 import { groq } from "next-sanity";
@@ -24,6 +25,9 @@ export default function About({ pageData }) {
     );
   return (
     <>
+     <Head>
+        <title>About us | Bruder Hilfe Social Development Initiative</title>
+      </Head>
       <Navbar />
       <TextHero>
         <h2 className="text-custom-black font-bold text-3xl lg:text-4xl xl:text-6xl">{hero.heading}</h2>

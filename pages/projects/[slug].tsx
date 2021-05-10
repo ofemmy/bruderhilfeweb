@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import Head from "next/head";
 import {
   Navbar,
   TextHero,
@@ -36,6 +37,9 @@ export default function Project(props) {
 
   return (
     <>
+      <Head>
+        <title>Projects | Bruder Hilfe Social Development Initiative</title>
+      </Head>
       <Navbar />
       <TextHero>
         <h2 className="text-custom-black font-bold text-2xl md:text-3xl lg:text-6xl text-center">
@@ -193,7 +197,7 @@ export default function Project(props) {
           ) : null}
         </div>
         <div>
-        {previous ? (
+          {previous ? (
             <Link href={`/projects/${previous?.slug ?? ""}`}>
               <a
                 className="lg:hidden inline-flex items-center px-4 py-2 border border-transparent text-md font-light rounded-md text-deep-purple  border-deep-purple hover:bg-deep-purple focus:outline-none focus:ring-2 focus:ring-offset-2 overflow-ellipsis
