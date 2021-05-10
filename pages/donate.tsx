@@ -7,7 +7,7 @@ export default function Donate() {
     <>
       <Navbar />
       <TextHero>
-        <h2 className="text-custom-black font-bold text-6xl">
+        <h2 className="text-custom-black font-bold text-3xl lg:text-6xl">
           Current Project
         </h2>
         <h3 className="text-custom-gray font-light">
@@ -16,7 +16,7 @@ export default function Donate() {
       </TextHero>
       <div className="relative">
         <SubHero imgUrl="current.png" />
-        <div className="absolute bottom-0 inset-x-1/2 h-52 w-[55rem] flex justify-between transform -translate-x-1/2 translate-y-1/2 text-white uppercase text-3xl font-semibold">
+        <div className="absolute bottom-0 inset-x-1/2 h-[78px] w-[317px] lg:h-52 lg:w-[55rem] flex justify-between transform -translate-x-1/2 translate-y-1/2 text-white uppercase lg:text-3xl font-semibold">
           <div className="bg-deep-purple h-full w-1/2 flex justify-center items-center ">
             <h2 className="text-center ">
               Project <br />
@@ -30,9 +30,9 @@ export default function Donate() {
           </div>
         </div>
       </div>
-      <section className="bg-light-green py-64">
+      <section className="bg-light-green py-20 lg:py-64">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center items-center">
-          <p className="text-center text-custom-gray leading-loose font-light text-xl">
+          <p className="lg:text-center text-custom-gray leading-loose font-light lg:text-xl">
             Project Karakata (Kara-kata been a Yoruba parlance name for Economic
             and commercial activities that is inclusive) focuses on deploying
             and implementing practical and sustainable economic empowerment and
@@ -49,14 +49,14 @@ export default function Donate() {
           </p>
         </div>
       </section>
-      <section className="py-36 bg-pink">
-        <h2 className="font-bold text-custom-black text-5xl  text-center">
+      <section className="py-16 lg:py-36 bg-pink">
+        <h2 className="font-bold text-custom-black  text-3xl lg:text-5xl  text-center">
           Planned Use of Funds
         </h2>
         <div className="mt-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center items-center space-y-16">
-          <div className="flex space-x-6 justify-center">
+          <div className="flex flex-col lg:flex-row lg:space-x-6  space-y-12 lg:space-y-0 justify-center">
             {budgetListings.map((budget, idx) => (
-              <div key={idx} className=" w-1/3">
+              <div key={idx} className="lg:w-1/3">
                 <p className="text-custom-gray-sub text-sm uppercase">Budget</p>
                 <h2 className="text-deep-purple font-bold text-3xl mt-2 pb-1">
                   <span>{budget.amountNGN}</span>/ <br />
@@ -82,7 +82,7 @@ export default function Donate() {
           </div>
           <a 
           href="/"
-          className="inline-flex items-center px-6 py-4 border border-transparent shadow-sm leading-4 font-medium rounded-md text-white bg-primary hover:bg-primary-dark">
+          className="md:-ml-24 lg:-ml-0 inline-flex items-center px-6 py-4 border border-transparent shadow-sm leading-4 font-medium rounded-md text-white bg-primary hover:bg-primary-dark">
           Donate Now
           <ArrowRightIcon className="ml-2 -mr-0.5 h-4 w-4" aria-hidden="true" />
         </a>
