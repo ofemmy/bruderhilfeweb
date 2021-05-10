@@ -19,9 +19,9 @@ export default function Home(props) {
     <>
       <Navbar />
       <Hero heroData={heroSection} />
-      <section className="py-36">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center relative space-x-16">
-          <div className="w-1/2 relative z-20">
+      <section className="lg:py-36 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse items-center lg:flex-row lg:justify-center relative lg:space-x-16">
+          <div className="mt-12 lg:mt-0 h-[433px] lg:h-full  lg:w-1/2 relative z-20">
             <img
               src={missionSection.sectionImage.url}
               alt="Bruder Hilfe vision"
@@ -30,21 +30,17 @@ export default function Home(props) {
             <img
               src="pattern2.png"
               alt=""
-              className="absolute -bottom-12 -left-20 h-[336.73px] w-[228px]"
+              className="absolute -bottom-12 -left-20 h-[260px] w-[208px] lg:h-[336.73px] lg:w-[228px]"
             />
           </div>
-          <div className="w-1/2 space-y-8">
-            <h2 className="text-custom-black font-extrabold text-4xl tracking-wide mt-12">
+          <div className="lg:w-1/2 space-y-8">
+            <h2 className="text-center lg:text-left text-custom-black font-extrabold text-4xl tracking-wide mt-12 lg:mt-0">
               {missionSection.sectionTitle}
             </h2>
             <p className="text-custom-gray leading-loose font-light text-md">
               {p1} <br /> {p2}
             </p>
-            {/* <Link href="/donate">
-              <a className="inline-flex items-center px-8 py-4 border border-transparent shadow-sm text-md leading-4 font-medium rounded-md text-white bg-primary hover:bg-primary-dark">
-                Learn More
-              </a>
-            </Link> */}
+           
           </div>
         </div>
       </section>
