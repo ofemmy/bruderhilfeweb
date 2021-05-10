@@ -38,7 +38,7 @@ export default function Project(props) {
     <>
       <Navbar />
       <TextHero>
-        <h2 className="text-custom-black font-bold text-6xl text-center">
+        <h2 className="text-custom-black font-bold text-2xl md:text-3xl lg:text-6xl text-center">
           {current?.projectName}
         </h2>
         <h3 className="text-custom-gray font-light text-sm">
@@ -48,7 +48,10 @@ export default function Project(props) {
           <span className="font-semibold">{current?.location}</span>
         </h3>
       </TextHero>
-      <div className="relative">
+      <div className="md:hidden relative">
+        <img src={current?.coverImg} alt="" />
+      </div>
+      <div className="hidden md:block relative">
         {isBeginning ? null : (
           <div className="absolute inset-y-1/2 left-14 z-30">
             <button
@@ -103,15 +106,15 @@ export default function Project(props) {
           </div>
         )}
       </div>
-      <div className="relative px-8 py-12 w-78p md:w-79.2p bg-primary mx-auto text-white text-2xl font-light flex justify-center items-center">
+      <div className="relative px-4 lg:px-8 py-12 md:w-78p lg:w-79.2p bg-primary mx-auto text-white lg:text-2xl font-light flex justify-center items-center leading-loose">
         <p className="text-center">
           We believe access to health care is the right of every human,
           irrespective of age, social status or gender.
         </p>
       </div>
 
-      <section className="py-32">
-        <div className="max-w-[1140px] mx-auto py-12">
+      <section className="py-8 lg:py-32">
+        <div className="max-w-[1140px] mx-auto py-12 px-4">
           {paragraphs
             ? paragraphs.map((p, idx) => (
                 <p
@@ -130,13 +133,13 @@ export default function Project(props) {
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="transform -translate-y-16">
-            <div className="grid grid-cols-3 gap-4">
+            <div className="space-y-8 lg:space-y-0 lg:grid grid-cols-3 gap-4">
               {current.images.map((image, idx) => (
                 <div
                   key={idx}
                   className={classNames(
                     `col-span-${gridCols[idx]}`,
-                    "rounded-lg relative h-[35rem] overflow-hidden"
+                    "lg:rounded-lg relative h-[35rem] overflow-hidden"
                   )}
                 >
                   <img
@@ -149,7 +152,7 @@ export default function Project(props) {
             </div>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center relative">
+        <div className="hidden lg:flex max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  justify-between items-center relative">
           {previous ? (
             <Link href={`/projects/${previous?.slug ?? ""}`}>
               <a
@@ -182,6 +185,46 @@ export default function Project(props) {
             hover:text-white focus:ring-deep-purple space-x-2 absolute right-8 overflow-ellipsis"
               >
                 <span>{next?.projectName}</span>
+                <span>
+                  <ArrowRightIcon />
+                </span>
+              </a>
+            </Link>
+          ) : null}
+        </div>
+        <div>
+        {previous ? (
+            <Link href={`/projects/${previous?.slug ?? ""}`}>
+              <a
+                className="inline-flex items-center px-4 py-2 border border-transparent text-md font-light rounded-md text-deep-purple  border-deep-purple hover:bg-deep-purple focus:outline-none focus:ring-2 focus:ring-offset-2 overflow-ellipsis
+            hover:text-white focus:ring-deep-purple space-x-2 absolute left-4"
+              >
+                <span>
+                  <ArrowLeftIcon />
+                </span>
+                <span>Prev</span>
+              </a>
+            </Link>
+          ) : (
+            <Link href={`/projects`}>
+              <a
+                className="inline-flex items-center px-4 py-2 border border-transparent text-md font-light rounded-md text-deep-purple  border-deep-purple hover:bg-deep-purple focus:outline-none focus:ring-2 focus:ring-offset-2 overflow-ellipsis
+            hover:text-white focus:ring-deep-purple space-x-2 absolute left-4"
+              >
+                <span>
+                  <ArrowLeftIcon />
+                </span>
+                <span>Projects</span>
+              </a>
+            </Link>
+          )}
+          {next ? (
+            <Link href={`/projects/${next?.slug ?? ""}`}>
+              <a
+                className="inline-flex items-center px-4 py-2 border border-transparent text-md font-light rounded-md text-deep-purple  border-deep-purple hover:bg-deep-purple focus:outline-none focus:ring-2 focus:ring-offset-2
+            hover:text-white focus:ring-deep-purple space-x-2 absolute right-4 overflow-ellipsis"
+              >
+                <span>Next</span>
                 <span>
                   <ArrowRightIcon />
                 </span>
