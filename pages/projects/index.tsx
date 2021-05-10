@@ -20,31 +20,32 @@ export default function Projects({ pageData }) {
     <>
       <Navbar />
       <TextHero>
-        <h2 className="text-custom-black font-bold text-6xl">Projects</h2>
+        <h2 className="text-custom-black font-bold text-3xl lg:text-6xl">Projects</h2>
         <h3 className="text-custom-gray font-light">
           We help millions of the needy
         </h3>
       </TextHero>
       <SubHero imgUrl="projectshero.png" />
       <section className="bg-primary">
-        <div className="max-w-5xl py-28 mx-auto flex flex-col justify-center items-center font-light text-white text-lg leading-loose">
+        <div className="max-w-5xl px-6 sm:px-6 lg:px-8 py-16 lg:py-28 mx-auto flex flex-col justify-center items-center font-light text-white text-lg leading-loose text-center lg:text-left">
           <p className="">
             We are committed to helping all underprivileged and underrepresented
-            members of the society.
+            members of the society
           </p>
           <p>who are living in unfavourable conditions and lifestyle </p>
         </div>
       </section>
-      <section className="bg-pink py-56">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between space-x-12 relative">
-          <div className="w-1/2 overflow-hidden rounded-md relative">
+      <section className="bg-pink py-24 lg:py-56">
+        <div className="max-w-7xl mx-auto px-4 sm:px-12 lg:px-8 flex flex-col lg:flex-row lg:justify-between lg:space-x-12 space-y-20 lg:space-y-0 relative">
+          <div className="h-[532px] lg:h-[810px] lg:w-1/2  rounded-md relative">
             <img
               src="bruderhilfe2.jpeg"
               alt=""
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover z-20 relative rounded-lg"
             />
+            <img src="/patternsmall.png" alt="" className="lg:hidden absolute -right-10 -bottom-10"/>
           </div>
-          <div className="w-1/2 h-[810px] overflow-hidden">
+          <div className="lg:w-1/2 h-[810px] overflow-hidden">
             <Swiper
               height={810}
               autoplay
@@ -59,7 +60,7 @@ export default function Projects({ pageData }) {
                   <Link href={`/projects/${project.slug}`}>
                     <a className="h-40 bg-light-green text-custom-gray hover:bg-primary hover:shadow-2xl hover:text-white flex rounded-md overflow-hidden transition duration-200">
                       <div className="flex-1 p-6 flex  items-center">
-                        <p className="text-2xl font-light">
+                        <p className="lg:text-2xl font-light">
                           {project.projectName}
                         </p>
                       </div>
