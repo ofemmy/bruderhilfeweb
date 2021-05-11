@@ -113,7 +113,7 @@ export default function About({ pageData }) {
             />
           </div>
           <div className="lg:w-1/2">
-            <h2 className="font-extrabold text-custom-black text-3xl text-center lg:text-left lg:text-5xl">
+            <h2 className="font-extrabold text-custom-black text-3xl lg:text-5xl">
               Our Objectives
             </h2>
             <div className="lg:grid grid-cols-2 gap-x-8 gap-y-6 xl:gap-y-12 font-light text-custom-gray mt-6 xl:mt-12 leading-loose">
@@ -146,7 +146,7 @@ export default function About({ pageData }) {
       </section>
       <section className="py-12 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-bold text-custom-black text-5xl text-center">
+          <h2 className="font-bold text-custom-black text-3xl lg:text-5xl text-center">
             Our team
           </h2>
           <ul className="space-y-12 lg:space-y-0 lg:grid grid-cols-3 gap-x-8 gap-y-16 mt-12 lg:mt-24">

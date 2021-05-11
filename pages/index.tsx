@@ -18,7 +18,7 @@ export default function Home(props) {
   const [isEnd, setIsEnd] = useState(false);
   return (
     <>
-    <Head>
+      <Head>
         <title>Welcome | Bruder Hilfe Social Development Initiative</title>
       </Head>
       <Navbar />
@@ -38,7 +38,7 @@ export default function Home(props) {
             />
           </div>
           <div className="lg:w-1/2 space-y-8">
-            <h2 className="text-center lg:text-left text-custom-black font-extrabold text-3xl lg:text-4xl tracking-wide mt-12 lg:mt-0">
+            <h2 className="lg:text-left text-custom-black font-extrabold text-3xl lg:text-4xl tracking-wide mt-12 lg:mt-0">
               {missionSection.sectionTitle}
             </h2>
             <p className="text-custom-gray leading-loose font-light text-md">
@@ -58,8 +58,8 @@ export default function Home(props) {
           </div>
           <div className="absolute inset-0 bg-primary bg-opacity-95"></div>
           <div className="relative mx-auto px-6 sm:px-6 lg:px-0 flex flex-col items-center justify-center lg:items-start lg:flex-row lg:justify-between py-16 lg:pl-28 lg:space-x-20">
-            <div className="space-y-8 text-white lg:w-1/2 flex flex-col justify-center items-center lg:items-start lg:justify-start">
-              <h2 className="font-extrabold  text-3xl lg:text-4xl tracking-wide text-center lg:text-left mt-12 lg:mt-0">
+            <div className="space-y-8 text-white lg:w-1/2 flex flex-col justify-center  lg:items-start lg:justify-start">
+              <h2 className="font-extrabold  text-3xl lg:text-4xl tracking-wide">
                 Project Karakata
               </h2>
               <p className="leading-loose font-light text-md relative w-full">
@@ -84,7 +84,7 @@ export default function Home(props) {
                 </span>
               </p>
               <Link href="/donate">
-                <a className=" inline-flex items-center px-8 py-4 border border-transparent shadow-sm text-md leading-4 font-medium rounded-md  bg-white text-primary hover:bg-light-green">
+                <a className=" inline-flex items-center justify-center lg:justify-start px-8 py-4 border border-transparent shadow-sm text-md leading-4 font-medium rounded-md  bg-white text-primary hover:bg-light-green">
                   Learn More
                 </a>
               </Link>
@@ -107,7 +107,7 @@ export default function Home(props) {
         <div className="hidden md:block ml-12 lg:ml-24 pt-16">
           <Swiper
             breakpoints={{
-              1024: { slidesPerView: 2.5,spaceBetween:30 },
+              1024: { slidesPerView: 2.5, spaceBetween: 30 },
               1280: { slidesPerView: 3.7 },
             }}
             slidesPerView={2.2}
@@ -128,7 +128,7 @@ export default function Home(props) {
         </div>
         <div className="md:hidden pt-16 flex flex-col justify-center items-center space-y-12">
           {thematicAreaSection.thematicAreas.map((thema, idx) => (
-            <Card thema={thema} key={idx}/>
+            <Card thema={thema} key={idx} />
           ))}
         </div>
         <div className="hidden md:flex justify-end mt-4 space-x-1 px-8">
