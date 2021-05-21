@@ -25,21 +25,25 @@ export default function About({ pageData }) {
     );
   return (
     <>
-     <Head>
+      <Head>
         <title>About us | Bruder Hilfe Social Development Initiative</title>
       </Head>
       <Navbar />
       <TextHero>
-        <h2 className="text-custom-black font-bold text-3xl lg:text-4xl xl:text-6xl">{hero.heading}</h2>
+        <h2 className="text-custom-black font-bold text-3xl lg:text-4xl xl:text-6xl">
+          {hero.heading}
+        </h2>
         <h3 className="text-custom-gray font-light">
-          We help millions of the needy
+          We strive to see a world where women and children are empowered
         </h3>
       </TextHero>
       <SubHero imgUrl={hero.backgroundImageUrl} />
 
       <section className="py-24 bg-light-green">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center items-center space-y-6">
-          <p className="font-light text-custom-gray text-sm text-center leading-loose">{p1}</p>
+          <p className="font-light text-custom-gray text-sm text-center leading-loose">
+            {p1}
+          </p>
           <p className="text-2xl text-custom-black text-center leading-loose">
             {p2}
           </p>
@@ -73,7 +77,10 @@ export default function About({ pageData }) {
           <div className="mt-12 lg:mt-32">
             <div className="space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-4 lg:gap-y-16 ">
               {coreValues.map((item) => (
-                <div className="h-541px lg:w-300 xl:w-358 overflow-hidden" key={item.title}>
+                <div
+                  className="h-541px lg:w-300 xl:w-358 overflow-hidden"
+                  key={item.title}
+                >
                   <div className="h-[272px] relative lg:w-300 xl:w-358">
                     <img
                       src={item.coverImg}
@@ -109,7 +116,7 @@ export default function About({ pageData }) {
             <img
               src="pattern2.png"
               alt="pattern"
-            className="absolute -bottom-16 -right-16 lg:-top-20 lg:-left-16"
+              className="absolute -bottom-16 -right-16 lg:-top-20 lg:-left-16"
             />
           </div>
           <div className="lg:w-1/2">
@@ -139,6 +146,10 @@ export default function About({ pageData }) {
                 girls in rural communities and put in place material and
                 non-material facilities that will promote their safety and
                 participation in public and private spaces.
+              </p>
+              <p className="lg:hidden">
+                To enhance human security and improved livelihood for the poor
+                and excluded.
               </p>
             </div>
           </div>

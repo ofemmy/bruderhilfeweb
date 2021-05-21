@@ -15,7 +15,7 @@ export default function Donate() {
           Current Project
         </h2>
         <h3 className="text-custom-gray font-light">
-          We help millions of the needy
+          We strive to empower the less-privileged in the society.
         </h3>
       </TextHero>
       <div className="relative">
@@ -85,9 +85,10 @@ export default function Donate() {
             ))}
           </div>
           <a 
-          href="/"
+          href="https://www.givingway.com/organization/bruderhilfe-social-development-initiative"
+          target="_blank"
           className="md:-ml-24 lg:-ml-0 inline-flex items-center px-6 py-4 border border-transparent shadow-sm leading-4 font-medium rounded-md text-white bg-primary hover:bg-primary-dark">
-          Donate Now
+          Help us reach our target
           <ArrowRightIcon className="ml-2 -mr-0.5 h-4 w-4" aria-hidden="true" />
         </a>
         </div>

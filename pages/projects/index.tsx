@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import Head from "next/head"
+import Head from "next/head";
 import {
   Navbar,
   TextHero,
@@ -19,14 +19,17 @@ export default function Projects({ pageData }) {
 
   return (
     <>
-    <Head>
+      <Head>
         <title>Projects | Bruder Hilfe Social Development Initiative</title>
       </Head>
       <Navbar />
       <TextHero>
-        <h2 className="text-custom-black font-bold text-3xl lg:text-6xl">Projects</h2>
+        <h2 className="text-custom-black font-bold text-3xl lg:text-6xl">
+          Projects
+        </h2>
         <h3 className="text-custom-gray font-light">
-          We help millions of the needy
+          We desire to see a world where the less-privileged are empowered to
+          fulfill their dreams also.
         </h3>
       </TextHero>
       <SubHero imgUrl="projectshero.png" />
@@ -47,7 +50,11 @@ export default function Projects({ pageData }) {
               alt=""
               className="h-full w-full object-cover z-20 relative rounded-lg"
             />
-            <img src="/patternsmall.png" alt="" className="lg:hidden absolute -right-10 -bottom-10"/>
+            <img
+              src="/patternsmall.png"
+              alt=""
+              className="lg:hidden absolute -right-10 -bottom-10"
+            />
           </div>
           <div className="lg:w-1/2 h-[810px] overflow-hidden">
             <Swiper
@@ -57,7 +64,7 @@ export default function Projects({ pageData }) {
               slidesPerView={4}
               onInit={(swiper) => (swiperRef.current = swiper)}
               slidesPerColumnFill="row"
-              spaceBetween={55}  
+              spaceBetween={55}
             >
               {pageData.map((project) => (
                 <SwiperSlide key={project.slug}>

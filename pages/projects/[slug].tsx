@@ -112,8 +112,8 @@ export default function Project(props) {
       </div>
       <div className="relative px-4 lg:px-8 py-12 md:w-78p lg:w-79.2p bg-primary mx-auto text-white lg:text-2xl font-light flex justify-center items-center leading-loose">
         <p className="text-center">
-          We believe access to health care is the right of every human,
-          irrespective of age, social status or gender.
+          "We make a living by what we get, but we make a life by what we give."{" "}
+          <em className="italic font-light">Winston Churchill</em>
         </p>
       </div>
 

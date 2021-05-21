@@ -48,14 +48,23 @@ export default function Footer() {
         <div>
           <h3 className="text-custom-black font-semibold">Connect with us</h3>
           <div className="flex space-x-6 mt-4">
-            <a href="/">
+            <a href="https://facebook.com/BruderhilfeSDI" target="_blank">
               <img src="/facebook.png" alt="" />
-            </a >
-            <a href="/">
+            </a>
+            <a href="https://twitter.com/BruderHilfeSDI?s=08" target="_blank">
               <img src="/twitter.png" alt="" />
             </a>
-            <a href="/">
-              <img src="/instagram.png" alt="" />
+            <a
+              href=" https://youtube.com/channel/UCnTzhUlxIpOM15ZnH3WK2gw"
+              target="_blank"
+            >
+              <img src="/youtube.png" alt="" className="h-6"/>
+            </a>
+            <a
+              href="https://www.instagram.com/bruderhilfe"
+              target="_blank"
+            >
+              <img src="/instagram.png" alt="" className="h-6"/>
             </a>
           </div>
         </div>

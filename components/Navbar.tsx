@@ -39,15 +39,17 @@ export default function Navbar() {
                 </a>
               </Link>
             ))}
-            <Link href="/donate">
-              <a className="inline-flex items-center px-6 py-4 border border-transparent shadow-sm leading-4 font-medium rounded-md text-white bg-primary hover:bg-primary-dark">
-                Donate
-                <ArrowRightIcon
-                  className="ml-2 -mr-0.5 h-4 w-4"
-                  aria-hidden="true"
-                />
-              </a>
-            </Link>
+            <a
+              href="https://www.givingway.com/donate/bruderhilfe-social-development-initiative"
+              target="_blank"
+              className="inline-flex items-center px-6 py-4 border border-transparent shadow-sm leading-4 font-medium rounded-md text-white bg-primary hover:bg-primary-dark"
+            >
+              Donate
+              <ArrowRightIcon
+                className="ml-2 -mr-0.5 h-4 w-4"
+                aria-hidden="true"
+              />
+            </a>
           </>
         </div>
         <div className="block md:hidden">
@@ -134,15 +136,18 @@ export default function Navbar() {
                       {item.name}
                     </a>
                   ))}
-                  <Link href="/donate">
-              <a className="flex items-center px-6 py-3 border border-transparent shadow-sm font-light rounded-md text-white bg-primary hover:bg-primary-dark">
-                Donate
-                <ArrowRightIcon
-                  className="ml-2 -mr-0.5 h-4 w-4"
-                  aria-hidden="true"
-                />
-              </a>
-            </Link>
+
+                  <a
+                    href="https://www.givingway.com/donate/bruderhilfe-social-development-initiative"
+                    target="_blank"
+                    className="flex items-center px-6 py-3 border border-transparent shadow-sm font-light rounded-md text-white bg-primary hover:bg-primary-dark"
+                  >
+                    Donate
+                    <ArrowRightIcon
+                      className="ml-2 -mr-0.5 h-4 w-4"
+                      aria-hidden="true"
+                    />
+                  </a>
                 </nav>
               </div>
             </div>
