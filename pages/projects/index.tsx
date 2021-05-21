@@ -27,7 +27,7 @@ export default function Projects({ pageData }) {
         <h2 className="text-custom-black font-bold text-3xl lg:text-6xl">
           Projects
         </h2>
-        <h3 className="text-custom-gray font-light">
+        <h3 className="text-custom-gray font-light text-center">
           We desire to see a world where the less-privileged are empowered to
           fulfill their dreams also.
         </h3>

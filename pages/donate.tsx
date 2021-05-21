@@ -6,7 +6,7 @@ import { budgetListings } from "lib/current";
 export default function Donate() {
   return (
     <>
-    <Head>
+      <Head>
         <title>Donate | Bruder Hilfe Social Development Initiative</title>
       </Head>
       <Navbar />
@@ -14,7 +14,7 @@ export default function Donate() {
         <h2 className="text-custom-black font-bold text-3xl lg:text-6xl">
           Current Project
         </h2>
-        <h3 className="text-custom-gray font-light">
+        <h3 className="text-custom-gray font-light text-center">
           We strive to empower the less-privileged in the society.
         </h3>
       </TextHero>
@@ -54,7 +54,7 @@ export default function Donate() {
         </div>
       </section>
       <section className="py-16 lg:py-36 bg-pink">
-        <h2 className="font-bold text-custom-black  text-3xl lg:text-5xl  text-center">
+        <h2 className="font-bold text-custom-black text-2xl md:text-3xl lg:text-5xl text-center">
           Planned Use of Funds
         </h2>
         <div className="mt-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center items-center space-y-16">
@@ -84,15 +84,18 @@ export default function Donate() {
               </div>
             ))}
           </div>
-          <a 
-          href="https://www.givingway.com/organization/bruderhilfe-social-development-initiative"
-          target="_blank"
-          className="md:-ml-24 lg:-ml-0 inline-flex items-center px-6 py-4 border border-transparent shadow-sm leading-4 font-medium rounded-md text-white bg-primary hover:bg-primary-dark">
-          Help us reach our target
-          <ArrowRightIcon className="ml-2 -mr-0.5 h-4 w-4" aria-hidden="true" />
-        </a>
+          <a
+            href="https://www.givingway.com/campaign/97accf"
+            target="_blank"
+            className="md:-ml-24 lg:-ml-0 inline-flex items-center px-6 py-4 border border-transparent shadow-sm leading-4 font-medium rounded-md text-white bg-primary hover:bg-primary-dark"
+          >
+            Help us reach our target
+            <ArrowRightIcon
+              className="ml-2 -mr-0.5 h-4 w-4"
+              aria-hidden="true"
+            />
+          </a>
         </div>
-        
       </section>
     </>
   );

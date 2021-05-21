@@ -15,7 +15,7 @@ export default function Hero({ heroData }) {
         />
       </div>
       <div className="md:hidden block absolute inset-0">
-      <img
+        <img
           className="h-full w-full object-cover"
           src="/mainheroMobile.png"
           alt="Two girls with the world map"
@@ -29,7 +29,7 @@ export default function Hero({ heroData }) {
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold flex flex-col xl:flex-row justify-center items-center space-x-2">
           <span className="">A world free of</span>
 
-          <div className="text-primary-light xl:inline-flex">
+          <div className="hidden sm:block text-primary-light xl:inline-flex">
             <Typewriter
               onInit={() => {}}
               options={{
@@ -42,12 +42,30 @@ export default function Hero({ heroData }) {
               }}
             />
           </div>
+          <div className="block sm:hidden text-primary-light">
+            <Typewriter
+              onInit={() => {}}
+              options={{
+                strings: [
+                  "Discrimination",
+                  "Poverty",
+                  "Exclusion",
+                  "Inequality",
+                ],
+                autoStart: true,
+                loop: true,
+                cursor: "",
+                wrapperClassName: "inline-flex",
+                deleteSpeed: 250,
+              }}
+            />
+          </div>
         </h1>
-        <div className="flex flex-col justify-center items-center text-sm lg:text-lg">
+        <div className="flex flex-col text-center justify-center items-center text-sm lg:text-lg">
           <p className="">{line1}</p>
           <p>and {line2}</p>
         </div>
-        <Link href="/donate">
+        <Link href="/about">
           <a className="inline-flex items-center px-8 py-4 border border-transparent shadow-sm text-lg leading-4 font-medium rounded-md text-white bg-primary hover:bg-primary-dark mt-1">
             Learn More
           </a>

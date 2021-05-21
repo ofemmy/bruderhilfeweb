@@ -30,7 +30,7 @@ export const budgetListings = [
       "Training of women on socio-economic skills and business that thrives in their context.",
       "Financial empowerment grant- Kwana-Makeri Community.",
       "Procurement of destoning machine for the Women Cooperative Society.",
-      "Monthly monitoring and evaluation of the utilisation of the project.",
+      "Monthly monitoring and evaluation of the project.",
     ],
   },
 ];

@@ -33,7 +33,7 @@ export default function About({ pageData }) {
         <h2 className="text-custom-black font-bold text-3xl lg:text-4xl xl:text-6xl">
           {hero.heading}
         </h2>
-        <h3 className="text-custom-gray font-light">
+        <h3 className="text-custom-gray font-light text-center">
           We strive to see a world where women and children are empowered
         </h3>
       </TextHero>
