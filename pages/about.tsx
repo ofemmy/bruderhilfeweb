@@ -201,6 +201,34 @@ export default function About({ pageData }) {
           </ul>
         </div>
       </section>
+      <section className="py-12 lg:py-32 bg-f0fff8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-bold text-primary-dark text-3xl lg:text-5xl text-center">
+            Our Patners
+          </h2>
+          <ul className="space-y-6 font-light list-disc px-4 mt-12 lg:mt-24">
+            <li className="text-primary">
+              Bruderhilfe has partnered with donor agencies like Medshare Inc,
+              and other non-profits and government organisations to distribute 7
+              containers if donated medical equipment and supplies to hospitals
+              and primary care facilities in over six states in Nigeria
+            </li>
+            <li className="text-primary">
+              Between 2018- 2020, Bruderhilfe patnered with Medshare to deliver
+              donated supplies to Borno, Bauchi, Sokoto and Katsina states as
+              well as to Health facilities in Ogun, Oyo and Lagos states through
+              partner NGOs.
+            </li>
+            <li className="text-primary">Nigerian Embassy, Germany.</li>
+            <li className="text-primary">
+              Bauchi state Orphans and Vulnerable Children Agency (BASOVCA)
+            </li>
+            <li className="text-primary">
+              Women Youth and Children Improvement Support Initiative (WYCISI)
+            </li>
+          </ul>
+        </div>
+      </section>
     </>
   );
 }

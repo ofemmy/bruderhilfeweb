@@ -84,7 +84,7 @@ export const coreValues = [
     coverImg: "postive-attitude.png",
   },
   {
-    title: "Teamwork",
+    title: "Team spirit",
     text: "We energetically work together to bring an end to discrimination, socio-economic exclusion and poverty.",
     coverImg: "teamwork.png",
   },
