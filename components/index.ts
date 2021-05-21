@@ -12,3 +12,6 @@ export { default as ArrowDownIcon } from "./ArrowDownIcon";
 export { default as ArrowUpIcon } from "./ArrowUpIcon";
 export { default as ArrowRightIcon } from "./ArrowRightIcon";
 export { default as ArrowLeftIcon } from "./ArrowLeftIcon";
+export { default as FacebookIcon } from "./FacebookIcon";
+export { default as TwitterIcon } from "./TwitterIcon";
+export { default as YoutubeIcon } from "./YoutubeIcon";

@@ -7,6 +7,7 @@ import { useRef, useEffect, useState } from "react";
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/outline";
 import { sanityStaticProps, useSanityQuery } from "lib/sanity";
 import { parsePortableText } from "lib/utils";
+import { futureProgrammes } from "lib/about";
 import { groq } from "next-sanity";
 
 export default function Home(props) {
@@ -148,6 +149,42 @@ export default function Home(props) {
           >
             <ArrowRightIcon className="h-6 w-12" />
           </button>
+        </div>
+      </section>
+      <section className="lg:flex lg:h-[950px]">
+        <div className="lg:w-1/2 h-full relative">
+          <img
+            src="future-new.jpeg"
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </div>
+        <div className="lg:w-1/2 px-6 md:px-8 lg:px-12 h-full flex flex-col items-start pb-16 lg:pb-0">
+          <h2 className="font-extrabold text-custom-black text-3xl lg:text-5xl mt-14 lg:mt-28">
+            Our Future Programmes
+          </h2>
+          <ul className="mt-6 lg:mt-12 space-y-4 font-light list-disc px-4">
+            {futureProgrammes.map((item, idx) => (
+              <li
+                key={idx}
+                className="text-primary leading-loose font-light text-md"
+              >
+                <span className="text-custom-gray">{item}</span>
+              </li>
+            ))}
+          </ul>
+
+          <a
+            href="https://www.givingway.com/donate/bruderhilfe-social-development-initiative"
+            target="_blank"
+            className="flex items-center px-6 py-3 border border-transparent shadow-sm rounded-md text-white bg-primary hover:bg-primary-dark mt-8 xl:mt-16"
+          >
+            Support us
+            <ArrowRightIcon
+              className="ml-2 -mr-0.5 h-4 w-4"
+              aria-hidden="true"
+            />
+          </a>
         </div>
       </section>
     </>

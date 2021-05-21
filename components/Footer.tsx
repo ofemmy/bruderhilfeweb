@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import {FacebookIcon,TwitterIcon, YoutubeIcon} from "components";
 
 export default function Footer() {
   return (
@@ -49,22 +50,22 @@ export default function Footer() {
           <h3 className="text-custom-black font-semibold">Connect with us</h3>
           <div className="flex space-x-6 mt-4">
             <a href="https://facebook.com/BruderhilfeSDI" target="_blank">
-              <img src="/facebook.png" alt="" />
+             <FacebookIcon/>
             </a>
             <a href="https://twitter.com/BruderHilfeSDI?s=08" target="_blank">
-              <img src="/twitter.png" alt="" />
+              <TwitterIcon/>
             </a>
             <a
               href=" https://youtube.com/channel/UCnTzhUlxIpOM15ZnH3WK2gw"
               target="_blank"
             >
-              <img src="/youtube.png" alt="" className="h-6"/>
+              <YoutubeIcon/>
             </a>
             <a
               href="https://www.instagram.com/bruderhilfe"
               target="_blank"
             >
-              <img src="/instagram.png" alt="" className="h-6"/>
+              <img src="/insta.png" alt="" className="h-6 -mt-1"/>
             </a>
           </div>
         </div>

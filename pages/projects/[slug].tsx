@@ -17,6 +17,7 @@ import Link from "next/link";
 SwiperCore.use([Autoplay]);
 
 export default function Project(props) {
+  console.log(props);
   const {
     pageData: { current, previous, next },
   } = props;
@@ -294,3 +295,16 @@ export async function getStaticProps(context) {
     },
   };
 }
+// export async function getServerSideProps(context) {
+//   const { slug } = context.query;
+//   const { data } = await sanityStaticProps({
+//     context,
+//     query: pageQuery,
+//     params: { slug },
+//   });
+//   return {
+//     props: {
+//       pageData: data,
+//     },
+//   };
+// }

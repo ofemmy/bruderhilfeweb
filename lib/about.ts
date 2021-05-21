@@ -89,3 +89,10 @@ export const coreValues = [
     coverImg: "teamwork.png",
   },
 ];
+export const futureProgrammes = [
+  "System Structuring: Training and Retreat for staff and volunteers of the organisation towards making the organisation more responsive and effective in programme implementation.",
+  "Women and Youth Empowerment: This will take place in some of the poorest regions in Nigeria such as the North-Central and South-Western parts of Nigeria starting from 2021.",
+  "Education: More scholarships are expected to be given to indigent students.",
+  "Social Inclusion: More empowerment programmes will be implemented for the socially excluded members of the society all over Nigeria.",
+  "Health: Medical outreaches to rural communities where people have little access to medical services.",
+];
