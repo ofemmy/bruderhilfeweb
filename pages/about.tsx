@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import Head from "next/head";
 import { sanityStaticProps, useSanityQuery } from "lib/sanity";
 import { classNames, parsePortableText } from "lib/utils";
+import { partners } from "lib/donate";
 import { groq } from "next-sanity";
 import {
   BookIcon,
@@ -109,9 +110,9 @@ export default function About({ pageData }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse lg:flex-row items-center lg:space-x-12">
           <div className="lg:w-1/2 relative mt-12 lg:mt-0 lg:h-[667px]  rounded-xl">
             <img
-              src="objectives.png"
+              src="object.jpeg"
               alt=""
-              className=" relative z-20 object-cover h-full"
+              className=" relative z-20 object-cover h-full rounded-md"
             />
             <img
               src="pattern2.png"
@@ -207,25 +208,9 @@ export default function About({ pageData }) {
             Our Patners
           </h2>
           <ul className="space-y-6 font-light list-disc px-4 mt-12 lg:mt-24">
-            <li className="text-primary">
-              Bruderhilfe has partnered with donor agencies like Medshare Inc,
-              and other non-profits and government organisations to distribute 7
-              containers if donated medical equipment and supplies to hospitals
-              and primary care facilities in over six states in Nigeria
-            </li>
-            <li className="text-primary">
-              Between 2018- 2020, Bruderhilfe patnered with Medshare to deliver
-              donated supplies to Borno, Bauchi, Sokoto and Katsina states as
-              well as to Health facilities in Ogun, Oyo and Lagos states through
-              partner NGOs.
-            </li>
-            <li className="text-primary">Nigerian Embassy, Germany.</li>
-            <li className="text-primary">
-              Bauchi state Orphans and Vulnerable Children Agency (BASOVCA)
-            </li>
-            <li className="text-primary">
-              Women Youth and Children Improvement Support Initiative (WYCISI)
-            </li>
+            {partners.map((partner, idx) => (
+              <li className="text-primary">{partner}</li>
+            ))}
           </ul>
         </div>
       </section>

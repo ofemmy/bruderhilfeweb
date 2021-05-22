@@ -40,8 +40,7 @@ export default function Navbar() {
               </Link>
             ))}
             <a
-              href="https://www.givingway.com/donate/bruderhilfe-social-development-initiative"
-              target="_blank"
+              href="/donate"
               className="inline-flex items-center px-6 py-4 border border-transparent shadow-sm leading-4 font-medium rounded-md text-white bg-primary hover:bg-primary-dark"
             >
               Donate
@@ -138,8 +137,7 @@ export default function Navbar() {
                   ))}
 
                   <a
-                    href="https://www.givingway.com/donate/bruderhilfe-social-development-initiative"
-                    target="_blank"
+                    href="/donate"
                     className="flex items-center px-6 py-3 border border-transparent shadow-sm font-light rounded-md text-white bg-primary hover:bg-primary-dark"
                   >
                     Donate

@@ -30,7 +30,7 @@ export default function Home(props) {
             <img
               src={missionSection.sectionImage.url}
               alt="Bruder Hilfe vision"
-              className="w-full h-full relative z-20 object-cover"
+              className="w-full h-full relative z-20 object-cover rounded-md"
             />
             <img
               src="pattern2.png"
@@ -84,7 +84,7 @@ export default function Home(props) {
                   sector, civil society, academia, and local communities.
                 </span>
               </p>
-              <Link href="/donate">
+              <Link href="/karakata">
                 <a className=" inline-flex items-center justify-center lg:justify-start px-8 py-4 border border-transparent shadow-sm text-md leading-4 font-medium rounded-md  bg-white text-primary hover:bg-light-green">
                   Learn More
                 </a>

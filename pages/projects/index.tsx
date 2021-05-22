@@ -34,12 +34,10 @@ export default function Projects({ pageData }) {
       </TextHero>
       <SubHero imgUrl="projectshero.png" />
       <section className="bg-primary">
-        <div className="max-w-5xl px-6 sm:px-6 lg:px-8 py-16 lg:py-28 mx-auto flex flex-col justify-center items-center font-light text-white text-lg leading-loose text-center lg:text-left">
+        <div className="max-w-5xl px-6 sm:px-6 lg:px-8 py-16 lg:py-28 mx-auto flex flex-col justify-center items-center font-light text-white text-lg leading-loose text-center ">
           <p className="">
-            We are committed to helping all underprivileged and underrepresented
-            members of the society
+          We are committed to working with people in marginalised communities living in unfavourable conditions  who are members of our society.
           </p>
-          <p>who are living in unfavourable conditions and lifestyle </p>
         </div>
       </section>
       <section className="bg-pink py-24 lg:py-56">
