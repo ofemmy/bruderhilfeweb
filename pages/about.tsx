@@ -110,7 +110,7 @@ export default function About({ pageData }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse lg:flex-row items-center lg:space-x-12">
           <div className="lg:w-1/2 relative mt-12 lg:mt-0 lg:h-[667px]  rounded-xl">
             <img
-              src="object.jpeg"
+              src="new-objective.jpeg"
               alt=""
               className=" relative z-20 object-cover h-full rounded-md"
             />
@@ -127,12 +127,12 @@ export default function About({ pageData }) {
             <div className="lg:grid grid-cols-2 gap-x-8 gap-y-6 xl:gap-y-12 font-light text-custom-gray mt-6 xl:mt-12 leading-loose">
               <p>
                 To ensure an increased accessibility and provision of
-                socio-economic services for the less-privileged and the social
+                socio-economic services for the less-privileged and the socially
                 excluded members of the society.
               </p>
               <p>
                 To promote and advocate for the rights of children and support
-                young people in building a just,democartic and inclusive
+                young people in building a just,democratic and inclusive
                 society, enhancing human security and improving livelihood for
                 the poor and excluded.
               </p>
@@ -205,7 +205,7 @@ export default function About({ pageData }) {
       <section className="py-12 lg:py-32 bg-f0fff8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-bold text-primary-dark text-3xl lg:text-5xl text-center">
-            Our Patners
+            Our Partners
           </h2>
           <ul className="space-y-6 font-light list-disc px-4 mt-12 lg:mt-24">
             {partners.map((partner, idx) => (

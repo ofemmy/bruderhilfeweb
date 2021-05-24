@@ -33,7 +33,7 @@ export default function Projects({ pageData }) {
           fulfill their dreams too.
         </h3>
       </TextHero>
-      <SubHero imgUrl="projectshero.png" />
+      <SubHero imgUrl="new-donate.jpeg" />
       <section className="bg-primary">
         <div className="max-w-5xl px-6 sm:px-6 lg:px-8 py-16 lg:py-28 mx-auto flex flex-col justify-center items-center font-light text-white text-lg leading-loose text-center lg:text-left">
           <p className="">
@@ -47,7 +47,7 @@ export default function Projects({ pageData }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-12 lg:px-8 flex flex-col lg:flex-row lg:justify-between lg:space-x-20 space-y-20 lg:space-y-0 relative">
           <div className="h-[532px] lg:h-[810px] lg:w-1/2  rounded-md relative">
             <img
-              src="donate.jpeg"
+              src="gifts.jpeg"
               alt=""
               className="h-full w-full object-cover z-20 relative rounded-lg"
             />

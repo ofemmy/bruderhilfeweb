@@ -17,7 +17,7 @@ export const team = [
     name: "Tosin Makinde",
     position: "Programme/Research Development Manager",
     description:
-      "He is a graduate of M.Div in Missiology, B.Sc History and International Studies, ND Mass Communication who specialises in Social Development Research and Programming. He is a passionate and trained Development worker in the area of research and Programming. He is opportuned to have been trained, Volunteered and worked for different developmental and humanitarian organisations in the Nigeria. He is presently the Programme and Research Officer for Bruderhilfe Social Development Initiative. His interest lies in deploying tested, practical Sustainable solutions to socio-economic development challenges affecting the poor and rural populace.",
+      "He is a graduate of M.Div in Missiology, B.Sc History and International Studies, ND Mass Communication who specialises in Social Development Research and Programming. He is a passionate and trained Development worker in the area of research and Programming. He has been trained,volunteered and worked for different developmental and humanitarian organisations in the Nigeria. He is presently the Programme and Research Officer for Bruderhilfe Social Development Initiative. His interest lies in deploying tested, practical Sustainable solutions to socio-economic development challenges affecting the poor and rural populace.",
     image: "tosin.png",
   },
   {
@@ -28,10 +28,10 @@ export const team = [
     image: "cynthia.png",
   },
   {
-    name: "Adeola Ajibola",
+    name: "Adeoya Ajibola",
     position: "Monitoring and Evaluation Manager",
     description:
-      "He graduated from the University of Ibadan with a degree in industrial Chemistry, and a second degree from the University of Lagos in Pharmaceutical Chemistry. He is a creative artist who is passionate about alleviating the plights of the privileged in the society.",
+      "He graduated from the University of Ibadan with a degree in industrial Chemistry, and a second degree from the University of Lagos in Pharmaceutical Chemistry. He is a creative artist who is passionate about alleviating the plights of the less-privileged in the society.",
     image: "ajibola.png",
   },
   {
@@ -56,7 +56,7 @@ export const coreValues = [
   {
     title: "Brotherhood",
     text: "To be part of a people with the mind of extending hands of love and devoted service to make the society a better and more equitable one.",
-    coverImg: "brotherhood.png",
+    coverImg: "brotherhood.jpeg",
   },
   {
     title: "Integrity",

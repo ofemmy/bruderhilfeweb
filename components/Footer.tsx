@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import {FacebookIcon,TwitterIcon, YoutubeIcon} from "components";
+import { FacebookIcon, TwitterIcon, YoutubeIcon } from "components";
 
 export default function Footer() {
   return (
@@ -22,7 +22,7 @@ export default function Footer() {
             <p>1. Bola Ajibola Street, off Allen Avenue,</p>
             <p>Ikeja Lagos, Nigeria.</p>
             <p className="">+234-8100015495</p>
-            <p>+234-7035654677</p>
+            <p>+234-8028283993</p>
             <p>+234-8032963838</p>
             <p className="">info@bruder-hilfe.com</p>
           </div>
@@ -50,22 +50,19 @@ export default function Footer() {
           <h3 className="text-custom-black font-semibold">Connect with us</h3>
           <div className="flex space-x-6 mt-4">
             <a href="https://facebook.com/BruderhilfeSDI" target="_blank">
-             <FacebookIcon/>
+              <FacebookIcon />
             </a>
             <a href="https://twitter.com/BruderHilfeSDI?s=08" target="_blank">
-              <TwitterIcon/>
+              <TwitterIcon />
             </a>
             <a
               href=" https://youtube.com/channel/UCnTzhUlxIpOM15ZnH3WK2gw"
               target="_blank"
             >
-              <YoutubeIcon/>
+              <YoutubeIcon />
             </a>
-            <a
-              href="https://www.instagram.com/bruderhilfe"
-              target="_blank"
-            >
-              <img src="/insta.png" alt="" className="h-6 -mt-1"/>
+            <a href="https://www.instagram.com/bruderhilfe" target="_blank">
+              <img src="/insta.png" alt="" className="h-6 -mt-1" />
             </a>
           </div>
         </div>
